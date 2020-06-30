@@ -3,8 +3,8 @@ import './App.css';
 
 function Header() {
   return (
-    <div className="Header">
-      <h1>Header</h1>
+    <div className="header">
+      <h1>Bank Hero</h1>
       
     </div>
   );
