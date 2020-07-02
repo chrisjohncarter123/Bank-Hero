@@ -14,10 +14,16 @@ function Header() {
       <div className="block">
         <ul id="menu">
           <li>
-            <a href="/home">Home</a>
+            <a href="/home">Dashboard</a>
+          </li>
+          <li>
+            <a href="/home">Accounts</a>
           </li>
           <li>
             <a href="/profile">Profile</a>
+          </li>
+          <li>
+            <a href="/profile">Contact</a>
           </li>
         </ul>
       </div>
