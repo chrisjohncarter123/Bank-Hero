@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contact_requests
   resources :transactions
   resources :accounts
   resources :users
