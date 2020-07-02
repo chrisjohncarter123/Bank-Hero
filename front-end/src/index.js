@@ -8,20 +8,23 @@ import Header from './Header'
 import Footer from './Footer'
 import Home from './Home'
 import Profile from './Profile'
+import AddBank from './AddBank'
 
 
 ReactDOM.render((
-  <div>
-    <Header />
-    <Router>
-      <div>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/profile" component={Profile} />
-      </div>
-    </Router>
-    <Footer />
-  </div>
+  <React.Fragment>
+
+      <Header />
+      <Router>
+        <div id="content">
+          <Route exact path="/" component={Home} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/addbank" component={AddBank} />
+        </div>
+      </Router>
+      <Footer />
+  </React.Fragment>
   ),
   document.getElementById('root')
 );
