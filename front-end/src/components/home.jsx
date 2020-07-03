@@ -1,6 +1,5 @@
 import React from 'react';
-import './App.css';
-import Account from './Account'
+import Account from './account'
 
 function Home() {
   return (

@@ -2,29 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.css';
 
-import Header from './Header'
-import Footer from './Footer'
-import Home from './Home'
-import Profile from './Profile'
-import AddBank from './AddBank'
+import App from './components/app'
+
 
 
 ReactDOM.render((
-  <React.Fragment>
-
-      <Header />
-      <Router>
-        <div id="content">
-          <Route exact path="/" component={Home} />
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/profile" component={Profile} />
-          <Route exact path="/addbank" component={AddBank} />
-        </div>
-      </Router>
-      <Footer />
-  </React.Fragment>
+    <App />
   ),
   document.getElementById('root')
 );

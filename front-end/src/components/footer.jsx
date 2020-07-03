@@ -1,9 +1,9 @@
 import React from 'react';
-import './App.css';
 
 function Footer() {
   return (
     <div className="footer">
+      <p className="mt-5 mb-3 text-muted">&copy; 2020</p>
       
     </div>
   );
