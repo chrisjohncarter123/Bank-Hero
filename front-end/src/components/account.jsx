@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Link
-} from "react-router-dom";
+import StoreContext from '../contexts/storeContext';
 
 
 class Account extends Component {
@@ -21,17 +18,24 @@ class Account extends Component {
      console.log(product);
      console.log('Clicked', );
    }
+   //{storeContext.name}
+   //{this.store.name}
 
   render() { 
     return (  
-      <div className="account">
-        <h3 style={this.styles}>{this.state.name}</h3>
-        <h3>${this.state.cash}</h3>
-        <ul>
-          {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
-        </ul>
-        <button onClick={() => this.handleName({id: 1})} className="btn btn-secondary btn-sm">View All Transactions</button>
-      </div>
+      <StoreContext.Consumer>
+        {storeContext => 
+          <div className="account">
+            
+            <h3 style={this.styles}> </h3>
+            <h3>${this.state.cash}</h3>
+            <ul>
+              {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
+            </ul>
+            <button onClick={() => this.handleName({id: 1})} className="btn btn-secondary btn-sm">View All Transactions</button>
+          </div>
+        }
+        </StoreContext.Consumer>
     );
   }
 }

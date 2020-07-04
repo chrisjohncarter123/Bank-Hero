@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -7,16 +8,18 @@ import 'font-awesome/css/font-awesome.css';
 import store from './store';
 import App from './components/app'
 
+import { addUser } from './actions'
 
-
-
+store.dispatch(addUser("312312321331", "Carter"))
 
 console.log(store.getState());
 
 
 
 ReactDOM.render((
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   ),
   document.getElementById('root')
 );

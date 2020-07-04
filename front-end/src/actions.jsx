@@ -9,14 +9,13 @@ const unsubscribe = store.subscribe(() => {
 })
 */
 
-
-export function addUser(firstName){
-    return store.dispatch({
+export function addUser(firstName, lastName){
+    return {
         type: actions.ADD_USER,
         payload:{
-          firstName:"Chris",
-          lastName:"Bob"
+          firstName,
+          lastName
         }
-      });
+      };
 
 }

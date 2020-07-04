@@ -11,40 +11,51 @@ import Home from './home'
 import Profile from './profile'
 import AddBank from './addBank'
 import NewUser from './newUser'
+import store from '../store';
+import StoreContext from '../contexts/storeContext';
 
 
 class App extends Component {
-    state = {  }
+
+    handleLoggedIn = (email) => {
+        console.log("Getting the user " + email)
+
+        this.setState({currentEmail:email});
+
+    }
+
+
+    state = { name:"christ" };
     render() { 
         return ( 
             <div>
-                <h1>Bank Hero</h1>
-                <Router>
-                <div className="block">
-                <ul id="menu">
-                    <li>
-                    <Link to="/dashboard">Dashboard</Link>
-                    </li>
-                    <li>
-                    <Link to="/accounts">Accounts</Link>
-                    </li>
-                    <li>
-                    <Link to="/profile">Profile</Link>
-                    </li>
-                    <li>
-                    <Link to="/contact">Contact</Link>
-                    </li>
-                </ul>
-                </div>
-                <div id="content">
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/dashboard" component={Home} />
-                    <Route exact path="/profile" component={Profile} />
-                    <Route exact path="/addbank" component={AddBank} />
-                </div>
-                </Router>
+                    <h1>Bank Hero</h1>
+                    <Router>
+                        <div className="block">
+                        <ul id="menu">
+                            <li>
+                            <Link to="/dashboard">Dashboard</Link>
+                            </li>
+                            <li>
+                            <Link to="/accounts">Accounts</Link>
+                            </li>
+                            <li>
+                            <Link to="/profile">Profile</Link>
+                            </li>
+                            <li>
+                            <Link to="/contact">Contact</Link>
+                            </li>
+                        </ul>
+                        </div>
+                        <div id="content">
+                            <Route exact path="/" component={Home} />
+                            <Route exact path="/dashboard" component={Home} />
+                            <Route exact path="/profile" component={Profile} />
+                            <Route exact path="/addbank" component={AddBank} />
+                        </div>
+                    </Router>
 
-                <p className="mt-5 mb-3 text-muted">&copy; 2020</p>
+                    <p className="mt-5 mb-3 text-muted">&copy; 2020</p>
             </div>
 
 

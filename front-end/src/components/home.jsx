@@ -1,22 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Account from './account'
+import StoreContext from '../contexts/storeContext';
 
-function Home() {
-  return (
-    <div className="Home">
+class Home extends Component{
 
-      <h2>Bank Accounts:</h2>
+  static contextType = StoreContext;
 
-      <a href="AddBank">Add Bank</a>
+  componentDidMount() {
+    console.log("store", this.context)
+  }
 
-      <Account />
-      <Account />
-      <Account />
-      <Account />
-      <Account />
-      
-    </div>
-  );
+  render() {
+    return (
+      <StoreContext.Consumer>
+        {StoreContext => 
+          <div className="Home">
+            
+            <h2>Bank Accounts:</h2>
+
+            <a href="AddBank">Add Bank</a>
+
+
+            <Account />
+            <Account />
+            <Account />
+            <Account />
+            <Account />
+            
+          </div>
+        }
+      </StoreContext.Consumer>
+    );
+  }
 }
 
 export default Home;
