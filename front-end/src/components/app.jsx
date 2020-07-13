@@ -27,6 +27,7 @@ class App extends Component {
 
     handleOnClick = event => {
         this.props.increaseCount();
+        console.log(this.props.fetchAstronauts());
         console.log(this.props)
       };
 

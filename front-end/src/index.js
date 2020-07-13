@@ -17,10 +17,7 @@ import { addUser } from './actions'
 
 //const persistedState = loadState();
 
-const store = createStore(counterReducer);
-
-
-
+const store = createStore(counterReducer, applyMiddleware(thunk));
 //store.dispatch(addUser("312312321331", "Carter"))
 
 console.log(store.getState());
@@ -30,11 +27,10 @@ store.subscribe(() => {
 });
 
 
-
 ReactDOM.render((
     <Provider store={store}>
       <App />
-    </Provider>
+    </Provider>, document.getElementById('container')
   ),
   document.getElementById('root')
 );
