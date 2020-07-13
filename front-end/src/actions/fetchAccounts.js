@@ -17,6 +17,7 @@ export const fetchAccounts = () => {
     return (dispatch) => {
       dispatch({ type: 'LOADING_ACCOUNTS'})
       fetch('http://localhost:4000/accounts').then(response => {
+        console.log(response.json)
         return response.json()
       }).then(responseJSON => {
         console.log(responseJSON)
