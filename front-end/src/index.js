@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from "redux";
-import reducer from './reducer';
+import reducer from './reducers/reducer';
+import counterReducer from './reducers/counterReducer'
 import thunk from "redux-thunk";
 import './index.css';
 import * as serviceWorker from './serviceWorker';
@@ -13,13 +14,14 @@ import App from './components/app'
 
 import { addUser } from './actions'
 
+
 //const persistedState = loadState();
 
-const store = createStore(reducer);
+const store = createStore(counterReducer);
 
 
 
-store.dispatch(addUser("312312321331", "Carter"))
+//store.dispatch(addUser("312312321331", "Carter"))
 
 console.log(store.getState());
 

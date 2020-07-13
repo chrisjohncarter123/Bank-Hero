@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import ReactDOM from 'react-dom';
 import './app.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
@@ -24,12 +25,21 @@ class App extends Component {
 
     }
 
+    handleOnClick = event => {
+        this.props.increaseCount();
+        console.log(this.props)
+      };
 
-    state = { name:"chris" };
+
     render() { 
         return ( 
             <div>
                     <h1>Bank Hero</h1>
+
+                    <button onClick={this.handleOnClick}>Click</button>
+                    <p>{this.props.items.length}</p>
+                    
+
                     <Router>
                         <div className="block">
                         <ul id="menu">
@@ -63,4 +73,19 @@ class App extends Component {
     }
 }
  
-export default App;
+const mapStateToProps = state => {
+    return {
+      items: state.items
+    };
+  };
+   
+  const mapDispatchToProps = dispatch => {
+    return {
+      increaseCount: () => dispatch({ type: 'INCREASE_COUNT' })
+    };
+  };
+   
+  export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(App);
