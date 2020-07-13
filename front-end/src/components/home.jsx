@@ -3,6 +3,7 @@ import Account from './account'
 import StoreContext from '../contexts/storeContext';
 import { connect } from 'react-redux';
 import { fetchAccounts } from '../actions/fetchAccounts'
+import { fetchCats } from '../actions/fetchCats'
 
 class Home extends Component{
 
@@ -12,21 +13,34 @@ class Home extends Component{
     console.log("handleOnClicks")
     
     this.props.fetchAccounts()
+    this.props.fetchCats()
     
-    //console.log(this.props.astronauts)
+    console.log(this.props)
     
 }
 
 
 
   componentDidMount() {
-    console.log("store", this.context)
+    console.log(this.props)
   }
 
   render() {
+    console.log("Props " ) // log will fire every time App renders
+    console.log(this.props.accounts)
+
+    let cats = ""
+
+    if(this.props.catPics != undefined){
+      cats = this.props.catPics.cats
+      console.log(cats[1])
+      cats = this.props.catPics.cats.map(cat => <li key={cat.id}>{cat.url}</li>);
+    }
+    else{
+        cats = <div>Loading ...</div>
+    }
+
     return (
-      <StoreContext.Consumer>
-        {StoreContext => 
           <div className="Home">
             
             <h2>Bank Accounts:</h2>
@@ -35,10 +49,9 @@ class Home extends Component{
 
             <p><a href="AddBank">Add Bank</a></p>
 
+            {cats}
             
           </div>
-        }
-      </StoreContext.Consumer>
     );
   }
 }
@@ -46,6 +59,7 @@ class Home extends Component{
 
 const mapStateToProps = state => {
   return {
+    catPics: state.cats,
     accounts: state.accounts,
     loading: state.loading
   }
@@ -53,6 +67,7 @@ const mapStateToProps = state => {
  
 const mapDispatchToProps = dispatch => {
   return {
+    fetchCats: () => dispatch(fetchCats()),
     fetchAccounts: () => dispatch(fetchAccounts())
   }
 }

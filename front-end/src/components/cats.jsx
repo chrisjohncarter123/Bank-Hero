@@ -9,7 +9,6 @@ class Cats extends Component {
         
         this.props.fetchCats()
         
-        //console.log(this.props.astronauts)
         
     }
  

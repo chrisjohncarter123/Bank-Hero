@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :cash %>
-    <%= form.number_field :cash %>
-  </div>
-
-  <div class="field">
     <%= form.label :user_id %>
     <%= form.number_field :user_id %>
   </div>
 
   <div class="field">
-    <%= form.label :dcreated_at %>
-    <%= form.datetime_select :dcreated_at %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.datetime_select :created_at %>
   </div>
 
   <div class="actions">
