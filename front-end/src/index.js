@@ -17,15 +17,19 @@ import App from './components/app'
 import { addUser } from './actions'
 
 
-const persistedState = loadState();
-const store = createStore(rootReducer, persistedState, applyMiddleware(thunk));
+import rootReducer from './reducers/rootReducer'
+ 
+
+//const persistedState = loadState();
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 //store.dispatch(addUser("312312321331", "Carter"))
 
 console.log(store.getState());
 
 store.subscribe(() => {
-  //saveState(store.getState());
+  
+  console.log("subscription")
 });
 
 
