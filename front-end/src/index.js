@@ -1,18 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from "redux";
+import reducer from './reducer';
+import thunk from "redux-thunk";
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
-import store from './store';
+
 import App from './components/app'
 
 import { addUser } from './actions'
 
+//const persistedState = loadState();
+
+const store = createStore(reducer);
+
+
+
 store.dispatch(addUser("312312321331", "Carter"))
 
 console.log(store.getState());
+
+store.subscribe(() => {
+  //saveState(store.getState());
+});
 
 
 
