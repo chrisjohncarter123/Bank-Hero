@@ -14,6 +14,7 @@ import AddBank from './addBank'
 import NewUser from './newUser'
 import store from '../store';
 import StoreContext from '../contexts/storeContext';
+import Astronauts from './astronauts';
 
 
 class App extends Component {
@@ -27,18 +28,19 @@ class App extends Component {
 
     handleOnClick = event => {
         this.props.increaseCount();
-        console.log(this.props.fetchAstronauts());
+        this.props.fetchAstronauts();
         console.log(this.props)
       };
 
 
     render() { 
         return ( 
+            
             <div>
                     <h1>Bank Hero</h1>
 
                     <button onClick={this.handleOnClick}>Click</button>
-                    <p>{this.props.items.length}</p>
+                    
                     
 
                     <Router>
@@ -56,10 +58,14 @@ class App extends Component {
                             <li>
                             <Link to="/contact">Contact</Link>
                             </li>
+                            <li>
+                            <Link to="/astronauts">Astronauts</Link>
+                            </li>
                         </ul>
                         </div>
                         <div id="content">
                             <Route exact path="/" component={Home} />
+                            <Route exact path="/astronauts" component={Astronauts} />
                             <Route exact path="/dashboard" component={Home} />
                             <Route exact path="/profile" component={Profile} />
                             <Route exact path="/addbank" component={AddBank} />
@@ -85,6 +91,8 @@ const mapStateToProps = state => {
       increaseCount: () => dispatch({ type: 'INCREASE_COUNT' })
     };
   };
+
+  
    
   export default connect(
     mapStateToProps,
