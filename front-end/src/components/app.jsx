@@ -15,6 +15,7 @@ import NewUser from './newUser'
 import store from '../store';
 import StoreContext from '../contexts/storeContext';
 import Astronauts from './astronauts';
+import Cats from './cats'
 
 
 class App extends Component {
@@ -61,6 +62,9 @@ class App extends Component {
                             <li>
                             <Link to="/astronauts">Astronauts</Link>
                             </li>
+                            <li>
+                            <Link to="/cats">Cats</Link>
+                            </li>
                         </ul>
                         </div>
                         <div id="content">
@@ -69,6 +73,7 @@ class App extends Component {
                             <Route exact path="/dashboard" component={Home} />
                             <Route exact path="/profile" component={Profile} />
                             <Route exact path="/addbank" component={AddBank} />
+                            <Route exact path="/cats" component={Cats} />
                         </div>
                     </Router>
 

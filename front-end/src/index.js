@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from "redux";
 import reducer from './reducers/reducer';
-import counterReducer from './reducers/counterReducer'
-import astronautsReducer from './reducers/astronautsReducer'
+import { combineReducers } from "redux";
+import counterReducer from "./reducers/counterReducer";
+import astronautsReducer from "./reducers/astronautsReducer";
+import catsReducer from "./reducers/catsReducer"
 import thunk from "redux-thunk";
 import './index.css';
 import * as serviceWorker from './serviceWorker';
@@ -17,10 +19,18 @@ import App from './components/app'
 import { addUser } from './actions'
 
 
-import rootReducer from './reducers/rootReducer'
+//import rootReducer from './reducers/rootReducer'
  
 
 //const persistedState = loadState();
+
+const rootReducer = combineReducers({
+  counter: counterReducer,
+  astronauts: astronautsReducer,
+  cats: catsReducer
+});
+
+
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 //store.dispatch(addUser("312312321331", "Carter"))
