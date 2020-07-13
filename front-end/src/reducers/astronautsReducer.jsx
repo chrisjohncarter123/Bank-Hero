@@ -1,4 +1,4 @@
-export default function astronautsReducer(state = { astronauts: [], requesting: false }, action) {
+function astronautsReducer(state = { astronauts: [], requesting: false }, action) {
     switch (action.type) {
    
       case 'START_ADDING_ASTRONAUTS_REQUEST':
