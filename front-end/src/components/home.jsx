@@ -27,17 +27,17 @@ class Home extends Component{
 
   render() {
     console.log("Props " ) // log will fire every time App renders
-    console.log(this.props.accounts)
+    console.log(this.props.accounts.accounts)
 
-    let cats = ""
+    let accounts = ""
 
-    if(this.props.catPics != undefined){
-      cats = this.props.catPics.cats
-      console.log(cats[1])
-      cats = this.props.catPics.cats.map(cat => <li key={cat.id}>{cat.url}</li>);
+    if(this.props.accounts != undefined){
+      accounts = this.props.accounts.accounts
+     // console.log(accounts[1])
+      accounts = this.props.accounts.accounts.map(account => <div key={account.id}><Account name={account.name}/></div>);
     }
     else{
-        cats = <div>Loading ...</div>
+      accounts = <div>Loading ...</div>
     }
 
     return (
@@ -49,7 +49,7 @@ class Home extends Component{
 
             <p><a href="AddBank">Add Bank</a></p>
 
-            {cats}
+            {accounts}
             
           </div>
     );

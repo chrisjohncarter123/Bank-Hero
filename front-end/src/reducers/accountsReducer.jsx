@@ -7,6 +7,7 @@ const accountsReducer = (state = { accounts: [], loading: false }, action) => {
           loading: true
         }
       case 'ADD_ACCOUNTS':
+        
         return {
           ...state,
           accounts: action.accounts,
