@@ -25,7 +25,7 @@ class App extends Component {
     }
 
 
-    state = { name:"christ" };
+    state = { name:"chris" };
     render() { 
         return ( 
             <div>
