@@ -6,6 +6,17 @@ class Home extends Component{
 
   static contextType = StoreContext;
 
+  handleOnClick = () => {
+    console.log("handleOnClicks")
+    
+    this.props.fetchAccounts()
+    
+    //console.log(this.props.astronauts)
+    
+}
+
+
+
   componentDidMount() {
     console.log("store", this.context)
   }

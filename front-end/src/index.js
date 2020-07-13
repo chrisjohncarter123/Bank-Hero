@@ -7,6 +7,7 @@ import { combineReducers } from "redux";
 import counterReducer from "./reducers/counterReducer";
 import astronautsReducer from "./reducers/astronautsReducer";
 import catsReducer from "./reducers/catsReducer"
+import accountsReducer from "./reducers/accountsReducer"
 import thunk from "redux-thunk";
 import './index.css';
 import * as serviceWorker from './serviceWorker';
@@ -27,7 +28,8 @@ import { addUser } from './actions'
 const rootReducer = combineReducers({
   counter: counterReducer,
   astronauts: astronautsReducer,
-  cats: catsReducer
+  cats: catsReducer,
+  accounts: accountsReducer
 });
 
 
