@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Account from './account'
 import StoreContext from '../contexts/storeContext';
+import { connect } from 'react-redux';
+import { fetchAccounts } from '../actions/fetchAccounts'
 
 class Home extends Component{
 
