@@ -29,14 +29,10 @@ class Home extends Component{
             
             <h2>Bank Accounts:</h2>
 
-            <a href="AddBank">Add Bank</a>
+            <p><span onClick={this.handleOnClick}>Get Accounts</span></p>
 
+            <p><a href="AddBank">Add Bank</a></p>
 
-            <Account />
-            <Account />
-            <Account />
-            <Account />
-            <Account />
             
           </div>
         }
@@ -45,4 +41,17 @@ class Home extends Component{
   }
 }
 
-export default Home;
+
+const mapStateToProps = state => {
+  return {
+    accounts: state.accounts,
+    loading: state.loading
+  }
+}
+ 
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchAccounts: () => dispatch(fetchAccounts())
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
