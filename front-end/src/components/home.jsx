@@ -99,11 +99,6 @@ class Home extends Component{
             
             <h2>Bank Accounts:</h2>
 
-            <button><span onClick={this.handleCreateCounter}>Create Counter</span></button>
-
-            <button><span onClick={this.handleCreateAccount}>Create Account</span></button>
-
-            <p><a href="AddBank">Add Bank</a></p>
 
             {accounts}
 
