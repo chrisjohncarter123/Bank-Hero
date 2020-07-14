@@ -39,15 +39,33 @@ class Home extends Component{
 
   state = {
     new_account_name : '',
-    new_transaction_from : '',
-    new_transaction_to : '',
-    new_transaction_cash : ''
+    transaction_from : '',
+    transaction_to : '',
+    cash : ''
 
   };
  
   handleChange = event => {
     this.setState({
       new_account_name: event.target.value
+    });
+  };
+
+  handleAccountFromChange = event => {
+    this.setState({
+      transaction_from: event.target.value
+    });
+  };
+
+  handleAccountToChange = event => {
+    this.setState({
+      transaction_to: event.target.value
+    });
+  };
+
+  handleCashChange = event => {
+    this.setState({
+      cash: event.target.value
     });
   };
  
@@ -57,7 +75,7 @@ class Home extends Component{
     console.log(this.state)
     this.props.createAccount({name: this.state.new_account_name})
     this.props.fetchAccounts()
-    this.render()
+
   };
 
   handleCreateTransactionSubmit = event => {
@@ -65,7 +83,7 @@ class Home extends Component{
     //this.props.dispatch({ type: 'ADD_TODO', payload: this.state });
     console.log(this.state)
     this.props.createTransaction(
-      {account_from: this.state.new_account_from, account_to: this.state.new_account_to, cash:this.state.new_account_cash})
+      {account_from: this.state.transaction_from, account_to: this.state.transaction_to, cash:this.state.cash})
     this.props.fetchAccounts()
     this.render()
   };
@@ -121,7 +139,7 @@ class Home extends Component{
                 <label>Account From:</label>
                 <input
                   type="text"
-                  onChange={event => this.handleChange(event)}
+                  onChange={event => this.handleAccountFromChange(event)}
                 />
               </p>
 
@@ -129,7 +147,7 @@ class Home extends Component{
                 <label>Account To:</label>
                 <input
                   type="text"
-                  onChange={event => this.handleChange(event)}
+                  onChange={event => this.handleAccountToChange(event)}
                 />
               </p>
 
@@ -137,7 +155,7 @@ class Home extends Component{
                 <label>Cash Ammount:</label>
                 <input
                   type="text"
-                  onChange={event => this.handleChange(event)}
+                  onChange={event => this.handleCashChange(event)}
                 />
               </p>
               <input type="submit" />

@@ -77,6 +77,8 @@ const transactionTemplate = (state) => ({
 
   export const createTransaction = (state) => {
 
+    console.log(transactionTemplate(state))
+
     let header = {
       method: "POST",
       headers: {
