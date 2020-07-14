@@ -27,9 +27,9 @@ class Account extends Component {
           <div className="account">
             
             <h3 style={this.styles}> </h3>
-            <p>Account Name:{this.props.name}</p>
+            <p><b>Account Name: </b>{this.props.name}</p>
+            <p><b>Cash: </b>{this.props.cash}</p>
 
-            <button onClick={() => this.handleName({id: 1})} className="btn btn-secondary btn-sm">View All Transactions</button>
           </div>
         }
         </StoreContext.Consumer>

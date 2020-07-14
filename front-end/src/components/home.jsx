@@ -38,16 +38,16 @@ class Home extends Component{
   }
 
   state = {
-    new_account_name,
-    new_transaction_from,
-    new_transaction_to,
-    new_transaction_cash
+    new_account_name : '',
+    new_transaction_from : '',
+    new_transaction_to : '',
+    new_transaction_cash : ''
 
   };
  
   handleChange = event => {
     this.setState({
-      name: event.target.value
+      new_account_name: event.target.value
     });
   };
  
@@ -55,7 +55,7 @@ class Home extends Component{
     event.preventDefault();
     //this.props.dispatch({ type: 'ADD_TODO', payload: this.state });
     console.log(this.state)
-    this.props.createAccount({name: this.state.name})
+    this.props.createAccount({name: this.state.new_account_name})
     this.props.fetchAccounts()
     this.render()
   };
@@ -64,7 +64,8 @@ class Home extends Component{
     event.preventDefault();
     //this.props.dispatch({ type: 'ADD_TODO', payload: this.state });
     console.log(this.state)
-    this.props.createTransaction({account_from: "chris", account_to: "new name", cash:"100"})
+    this.props.createTransaction(
+      {account_from: this.state.new_account_from, account_to: this.state.new_account_to, cash:this.state.new_account_cash})
     this.props.fetchAccounts()
     this.render()
   };
@@ -86,7 +87,8 @@ class Home extends Component{
 
     let divStyle = {
       color: 'black',
-      backgroundColor: 'red'
+      border: 'solid 1px black',
+      padding: '15px'
     };
 
     return (

@@ -3,10 +3,10 @@ import React from 'react';
 function Profile() {
   return (
     <div className="Profile">
-      <h1>Profile</h1>
+      <h3>Profile</h3>
 
-      <h3>Edit Username</h3>
-      <h3>Edit Password</h3>
+      <p><b>Email: </b></p>
+      <p><b>Username: </b></p>
       
     </div>
   );

@@ -40,10 +40,6 @@ class App extends Component {
             <div>
                     <h1>Bank Hero</h1>
 
-                    <button onClick={this.handleOnClick}>Click</button>
-                    
-                    
-
                     <Router>
                         <div className="block">
                         <ul id="menu">
