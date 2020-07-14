@@ -28,9 +28,7 @@ class Account extends Component {
             
             <h3 style={this.styles}> </h3>
             <p>Account Name:{this.props.name}</p>
-            <ul>
-              {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
-            </ul>
+
             <button onClick={() => this.handleName({id: 1})} className="btn btn-secondary btn-sm">View All Transactions</button>
           </div>
         }

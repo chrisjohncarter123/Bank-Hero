@@ -65,20 +65,22 @@ class Home extends Component{
     if(this.props.accounts != undefined){
       accounts = this.props.accounts.accounts
      // console.log(accounts[1])
-      accounts = this.props.accounts.accounts.map(account => <div key={account.id}><Account name={account.name}/></div>);
+      accounts = this.props.accounts.accounts.map(account => <div key={account.id}><Account name={account.name}/><br /></div>);
     }
     else{
       accounts = <div>Loading ...</div>
     }
 
     let divStyle = {
-      color: 'blue',
+      color: 'black',
       backgroundColor: 'red'
     };
 
     return (
       
           <div className="Home">
+
+          <br />
 
           <div  style={divStyle}>
             <h3>Create New Account:</h3>
@@ -95,12 +97,32 @@ class Home extends Component{
             </form>
           </div>
 
+          <br />
+
+          <div  style={divStyle}>
+            <h3>Create New Transaction:</h3>
+            <form onSubmit={event => this.handleSubmit(event)}>
+              <p>
+                <label>Account Name:</label>
+                <input
+                  type="text"
+                  onChange={event => this.handleChange(event)}
+                  placeholder={"name"}
+                />
+              </p>
+              <input type="submit" />
+            </form>
+          </div>
+
+          <br />
+
             
-            
-            <h2>Bank Accounts:</h2>
+          <div  style={divStyle}>
+            <h3>Bank Accounts:</h3>
 
 
             {accounts}
+            </div>
 
         
             
