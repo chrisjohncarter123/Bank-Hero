@@ -21,27 +21,18 @@ class Home extends Component{
 }
 
   componentDidMount() {
-    createCounter("new name")
+    this.props.fetchAccounts()
+
    
   }
 
   handleCreateCounter = () => {
-    console.log("handleCreateCounter")
-
-  
-    this.props.createCounter()
-
-    console.log(this.props)
+    this.props.createCounter("New Counter")
 
   }
 
   handleCreateAccount = () => {
-    console.log("handleCreateAccount")
-
-  
     this.props.createAccount()
-
-    console.log(this.props)
 
   }
 
@@ -66,8 +57,6 @@ class Home extends Component{
             
             
             <h2>Bank Accounts:</h2>
-
-            <button><span onClick={this.handleOnClick}>Get Accounts</span></button>
 
             <button><span onClick={this.handleCreateCounter}>Create Counter</span></button>
 

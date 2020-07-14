@@ -17,9 +17,6 @@ class CreateAccountForm extends Component {
     //this.props.dispatch({ type: 'ADD_TODO', payload: this.state });
     console.log(this.state)
   };
-  
-
-
  
   render() {
     let divStyle = {
@@ -29,7 +26,7 @@ class CreateAccountForm extends Component {
 
     return (
       <div  style={divStyle}>
-        <h3>Add New Account:</h3>
+        <h3>Create New Account:</h3>
         <form onSubmit={event => this.handleSubmit(event)}>
           <p>
             <label>Account Name:</label>
