@@ -4,6 +4,7 @@ import StoreContext from '../contexts/storeContext';
 import { connect } from 'react-redux';
 import { fetchAccounts, createAccount, createCounter } from '../actions/fetchAccounts'
 import { fetchCats } from '../actions/fetchCats'
+import {createAccount} from './createAccount'
 
 class Home extends Component{
 
@@ -20,15 +21,8 @@ class Home extends Component{
 }
 
   componentDidMount() {
-    // Simple POST request with a JSON body using fetch
-    const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({counter:{ name: 'React POnjnnjnST Request Example' }})
-    };
-    fetch('http://localhost:4000/counters', requestOptions)
-        .then(response => response.json())
-        .then(data => console.log(data));
+    createCounter("new name")
+   
   }
 
   handleCreateCounter = () => {
@@ -100,7 +94,7 @@ const mapDispatchToProps = dispatch => {
     fetchCats: () => dispatch(fetchCats()),
     fetchAccounts: () => dispatch(fetchAccounts()),
     createAccount: (state) => dispatch(createAccount(state)),
-    createCounter: () => dispatch(createCounter())
+    createCounter: (name) => dispatch(createCounter(name))
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

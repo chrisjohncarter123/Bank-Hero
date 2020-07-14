@@ -12,11 +12,24 @@ export const fetchAccounts = () => {
   }
   */
 
-
  const accountTemplate = (state) => ({
   name: state.name
 
 });
+
+  export const createCounter = (name) => {
+     // Simple POST request with a JSON body using fetch
+     const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({counter:{ name: name }})
+    };
+    fetch('http://localhost:4000/counters', requestOptions)
+        .then(response => response.json())
+        .then(data => console.log(data));
+  }
+
+
 
   export const fetchAccounts = () => {
 
@@ -56,25 +69,4 @@ export const fetchAccounts = () => {
     }
   }
 
-  export const createCounter= () => {
-    console.log("HI")
-    let state = {name:"chris2"}
-    console.log(state)
 
-    let header = {
-      method: "Post",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      }
-    };
-
-    return (dispatch) => {
-
-      fetch('http://localhost:4000/counters', header).then(response => {
-        return response.json()
-      }).then(responseJSON => {
-        console.log(responseJSON)
-      })
-    }
-  }
