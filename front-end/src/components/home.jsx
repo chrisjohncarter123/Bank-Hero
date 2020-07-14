@@ -4,7 +4,7 @@ import StoreContext from '../contexts/storeContext';
 import { connect } from 'react-redux';
 import { fetchAccounts, createAccount, createCounter } from '../actions/fetchAccounts'
 import { fetchCats } from '../actions/fetchCats'
-import {createAccount} from './createAccount'
+import  CreateAccountForm  from './createAccountForm'
 
 class Home extends Component{
 
@@ -62,6 +62,8 @@ class Home extends Component{
 
     return (
           <div className="Home">
+
+            
             
             <h2>Bank Accounts:</h2>
 
@@ -74,6 +76,8 @@ class Home extends Component{
             <p><a href="AddBank">Add Bank</a></p>
 
             {accounts}
+
+            <CreateAccountForm />
             
           </div>
     );
