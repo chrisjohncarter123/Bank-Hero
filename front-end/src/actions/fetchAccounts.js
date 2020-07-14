@@ -47,9 +47,8 @@ export const fetchAccounts = () => {
  }
 
 
-  export const createAccount = () => {
+  export const createAccount = (state) => {
     console.log("HI")
-    let state = {name:"chris"}
 
     let header = {
       method: "POST",
