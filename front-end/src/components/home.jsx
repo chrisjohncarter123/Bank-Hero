@@ -38,7 +38,11 @@ class Home extends Component{
   }
 
   state = {
-    name: ''
+    new_account_name,
+    new_transaction_from,
+    new_transaction_to,
+    new_transaction_cash
+
   };
  
   handleChange = event => {
@@ -60,7 +64,7 @@ class Home extends Component{
     event.preventDefault();
     //this.props.dispatch({ type: 'ADD_TODO', payload: this.state });
     console.log(this.state)
-    this.props.createTransaction({account_from: "chris", account_to: "chris2", cash:"100"})
+    this.props.createTransaction({account_from: "chris", account_to: "new name", cash:"100"})
     this.props.fetchAccounts()
     this.render()
   };

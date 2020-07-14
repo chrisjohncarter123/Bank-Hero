@@ -26,13 +26,22 @@ class TransactionsController < ApplicationController
   # POST /transactions.json
   def create
 
+    puts "New Transaction..."
+
     @transaction = Transaction.new()
     puts "Hi"
-    puts transaction_params
+    puts params
     puts "Hi2"
     @transaction.account_from_id = Account.find_by(name: params[:account_from]).id
-    @transaction.account_to_id = Account.find(name: params[:account_to]).id
+    @transaction.account_to_id = Account.find_by(name: params[:account_to]).id
     @transaction.cash = params[:cash]
+
+    if @transaction.save
+      puts "saved"
+
+    else
+      puts "not saved"
+    end
 
     respond_to do |format|
       if @transaction.save
