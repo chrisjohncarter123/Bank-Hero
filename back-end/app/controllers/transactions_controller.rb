@@ -45,9 +45,11 @@ class TransactionsController < ApplicationController
 
       @account_to.cash += @transaction.cash
       @account_to.save
+      puts "saved to"
       
       @account_from.cash -= @transaction.cash
       @account_from.save
+      puts "saved from"
 
 
 
