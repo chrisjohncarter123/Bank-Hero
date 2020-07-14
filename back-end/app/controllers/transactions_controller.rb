@@ -40,15 +40,27 @@ class TransactionsController < ApplicationController
     @transaction.account_to_id = @account_to.id
     @transaction.cash = params[:cash]
 
+   # Account.find_by(name: params[:account_from]).cash += @transaction.cash
+
     if @transaction.save
       puts "saved"
 
-      @account_to.cash += @transaction.cash
-      @account_to.save
-      puts "saved to"
+      puts @transaction.cash
+
+      puts (Account.find_by(name: params[:account_from]).cash += @transaction.cash)
+      Account.find_by(name: params[:account_to]).cash -= @transaction.cash
       
+      @account_to.cash += @transaction.cash
       @account_from.cash -= @transaction.cash
+      @account_to.save
       @account_from.save
+      #Account.find_by(name: params[:account_from]).cash += @transaction.cash
+      #@account_to.save
+      puts Account.find_by(name: params[:account_from]).cash
+      puts Account.find_by(name: params[:account_to]).cash
+      
+     # @account_from.cash -= @transaction.cash
+    #  @account_from.save
       puts "saved from"
 
 

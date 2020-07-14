@@ -4,7 +4,7 @@ class CreateAccounts < ActiveRecord::Migration[6.0]
       t.string :name
       t.integer :user_id
       t.integer :account_number
-      t.integer :cash
+      t.integer :cash, :default => 0
       
 
       t.timestamps

@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_061946) do
     t.string "name"
     t.integer "user_id"
     t.integer "account_number"
-    t.integer "cash"
+    t.integer "cash", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
