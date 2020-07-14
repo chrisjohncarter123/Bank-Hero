@@ -25,7 +25,7 @@
 }
 
 .footer {
-  background-color: #61dafb;
+  background-color: 'black';
   height: 50px;
   display: flex;
   flex-direction: column;
@@ -74,9 +74,8 @@ ul#menu {
 
 .account{
   background-color: blue;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 20px;
+  margin: 2px;
+  padding: 2px;
 }
 
 .account h3{
