@@ -32,12 +32,26 @@ class TransactionsController < ApplicationController
     puts "Hi"
     puts params
     puts "Hi2"
-    @transaction.account_from_id = Account.find_by(name: params[:account_from]).id
-    @transaction.account_to_id = Account.find_by(name: params[:account_to]).id
+
+    @account_from = Account.find_by(name: params[:account_from])
+    @account_to = Account.find_by(name: params[:account_to])
+
+    @transaction.account_from_id = @account_from.id
+    @transaction.account_to_id = @account_to.id
     @transaction.cash = params[:cash]
 
     if @transaction.save
       puts "saved"
+
+      @account_to.cash += @transaction.cash
+      @account_to.save
+      
+      @account_from.cash -= @transaction.cash
+      @account_from.save
+
+
+
+
 
     else
       puts "not saved"
