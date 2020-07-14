@@ -10,7 +10,6 @@ class Account extends Component {
    }
 
    styles = {
-     fontSize: '20px',
      fontWeight: "bold"
    }
 
@@ -28,7 +27,7 @@ class Account extends Component {
           <div className="account">
             
             <h3 style={this.styles}> </h3>
-            <h3>Account Name:{this.props.name}</h3>
+            <p>Account Name:{this.props.name}</p>
             <ul>
               {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
             </ul>

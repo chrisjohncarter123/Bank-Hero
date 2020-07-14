@@ -38,12 +38,12 @@ class Home extends Component{
   }
 
   state = {
-    text: ''
+    name: ''
   };
  
   handleChange = event => {
     this.setState({
-      text: event.target.value
+      name: event.target.value
     });
   };
  
@@ -51,6 +51,9 @@ class Home extends Component{
     event.preventDefault();
     //this.props.dispatch({ type: 'ADD_TODO', payload: this.state });
     console.log(this.state)
+    this.props.createAccount({name: this.state.name})
+    this.props.fetchAccounts()
+    this.render()
   };
 
   render() {
