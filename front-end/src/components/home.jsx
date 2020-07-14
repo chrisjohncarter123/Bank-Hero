@@ -103,11 +103,26 @@ class Home extends Component{
             <h3>Create New Transaction:</h3>
             <form onSubmit={event => this.handleSubmit(event)}>
               <p>
-                <label>Account Name:</label>
+                <label>Account From:</label>
                 <input
                   type="text"
                   onChange={event => this.handleChange(event)}
-                  placeholder={"name"}
+                />
+              </p>
+
+              <p>
+                <label>Account To:</label>
+                <input
+                  type="text"
+                  onChange={event => this.handleChange(event)}
+                />
+              </p>
+
+              <p>
+                <label>Cash Ammount:</label>
+                <input
+                  type="text"
+                  onChange={event => this.handleChange(event)}
                 />
               </p>
               <input type="submit" />

@@ -17,6 +17,12 @@ export const fetchAccounts = () => {
 
 });
 
+const transactionTemplate = (state) => ({
+  account_from: state.account_from,
+  account_to: state.account_to,
+  cash: state.cash
+});
+
 
   export const fetchAccounts = () => {
 
@@ -60,6 +66,27 @@ export const fetchAccounts = () => {
 
     return (dispatch) => {
       dispatch({ type: 'CREATE_ACCOUNT'})
+      fetch('http://localhost:4000/accounts', header).then(response => {
+        return response.json()
+      }).then(responseJSON => {
+        console.log(responseJSON)
+       // dispatch({ type: 'ADD_ACCOUNTS', accounts: responseJSON })
+      })
+    }
+  }
+
+  export const createTransaction = (state) => {
+
+    let header = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(transactionTemplate(state)),
+    };
+
+    return (dispatch) => {
+      dispatch({ type: 'CREATE_TRANSACTION'})
       fetch('http://localhost:4000/accounts', header).then(response => {
         return response.json()
       }).then(responseJSON => {
