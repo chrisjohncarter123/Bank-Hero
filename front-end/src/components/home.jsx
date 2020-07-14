@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Account from './account'
 import StoreContext from '../contexts/storeContext';
 import { connect } from 'react-redux';
-import { fetchAccounts } from '../actions/fetchAccounts'
+import { fetchAccounts, createAccount, createCounter } from '../actions/fetchAccounts'
 import { fetchCats } from '../actions/fetchCats'
 
 class Home extends Component{
@@ -19,10 +19,36 @@ class Home extends Component{
     
 }
 
-
-
   componentDidMount() {
+    // Simple POST request with a JSON body using fetch
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({counter:{ name: 'React POnjnnjnST Request Example' }})
+    };
+    fetch('http://localhost:4000/counters', requestOptions)
+        .then(response => response.json())
+        .then(data => console.log(data));
+  }
+
+  handleCreateCounter = () => {
+    console.log("handleCreateCounter")
+
+  
+    this.props.createCounter()
+
     console.log(this.props)
+
+  }
+
+  handleCreateAccount = () => {
+    console.log("handleCreateAccount")
+
+  
+    this.props.createAccount()
+
+    console.log(this.props)
+
   }
 
   render() {
@@ -45,7 +71,11 @@ class Home extends Component{
             
             <h2>Bank Accounts:</h2>
 
-            <p><span onClick={this.handleOnClick}>Get Accounts</span></p>
+            <button><span onClick={this.handleOnClick}>Get Accounts</span></button>
+
+            <button><span onClick={this.handleCreateCounter}>Create Counter</span></button>
+
+            <button><span onClick={this.handleCreateAccount}>Create Account</span></button>
 
             <p><a href="AddBank">Add Bank</a></p>
 
@@ -68,7 +98,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchCats: () => dispatch(fetchCats()),
-    fetchAccounts: () => dispatch(fetchAccounts())
+    fetchAccounts: () => dispatch(fetchAccounts()),
+    createAccount: (state) => dispatch(createAccount(state)),
+    createCounter: () => dispatch(createCounter())
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

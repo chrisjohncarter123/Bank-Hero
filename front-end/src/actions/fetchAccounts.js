@@ -19,6 +19,8 @@ export const fetchAccounts = () => {
 });
 
   export const fetchAccounts = () => {
+
+    console.log("HI")
     return (dispatch) => {
       dispatch({ type: 'LOADING_ACCOUNTS'})
       fetch('http://localhost:4000/accounts').then(response => {
@@ -30,7 +32,10 @@ export const fetchAccounts = () => {
     }
   }
 
-  export const creatAccount = (state) => {
+  export const createAccount = () => {
+    console.log("HI")
+    let state = {name:"chris"}
+
     let header = {
       method: "Post",
       headers: {
@@ -51,4 +56,25 @@ export const fetchAccounts = () => {
     }
   }
 
- 
+  export const createCounter= () => {
+    console.log("HI")
+    let state = {name:"chris2"}
+    console.log(state)
+
+    let header = {
+      method: "Post",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      }
+    };
+
+    return (dispatch) => {
+
+      fetch('http://localhost:4000/counters', header).then(response => {
+        return response.json()
+      }).then(responseJSON => {
+        console.log(responseJSON)
+      })
+    }
+  }
