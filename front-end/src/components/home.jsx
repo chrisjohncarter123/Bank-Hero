@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Account from './account'
 import StoreContext from '../contexts/storeContext';
 import { connect } from 'react-redux';
-import { fetchAccounts, createAccount, createCounter } from '../actions/fetchAccounts'
+import { fetchAccounts, createAccount, createCounter, createTransaction } from '../actions/fetchAccounts'
 import { fetchCats } from '../actions/fetchCats'
 import  CreateAccountForm  from './createAccountForm'
 
@@ -47,11 +47,20 @@ class Home extends Component{
     });
   };
  
-  handleSubmit = event => {
+  handleCreateAccountSubmit = event => {
     event.preventDefault();
     //this.props.dispatch({ type: 'ADD_TODO', payload: this.state });
     console.log(this.state)
     this.props.createAccount({name: this.state.name})
+    this.props.fetchAccounts()
+    this.render()
+  };
+
+  handleCreateTransactionSubmit = event => {
+    event.preventDefault();
+    //this.props.dispatch({ type: 'ADD_TODO', payload: this.state });
+    console.log(this.state)
+    this.props.createTransaction({account_from: "chris", account_to: "chris2", cash:"100"})
     this.props.fetchAccounts()
     this.render()
   };
@@ -84,7 +93,7 @@ class Home extends Component{
 
           <div  style={divStyle}>
             <h3>Create New Account:</h3>
-            <form onSubmit={event => this.handleSubmit(event)}>
+            <form onSubmit={event => this.handleCreateAccountSubmit(event)}>
               <p>
                 <label>Account Name:</label>
                 <input
@@ -101,7 +110,7 @@ class Home extends Component{
 
           <div  style={divStyle}>
             <h3>Create New Transaction:</h3>
-            <form onSubmit={event => this.handleSubmit(event)}>
+            <form onSubmit={event => this.handleCreateTransactionSubmit(event)}>
               <p>
                 <label>Account From:</label>
                 <input
@@ -161,6 +170,7 @@ const mapDispatchToProps = dispatch => {
     fetchAccounts: () => dispatch(fetchAccounts()),
     createAccount: (state) => dispatch(createAccount(state)),
     createCounter: () => dispatch(createCounter()),
+    createTransaction: (state) => dispatch(createTransaction(state)),
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

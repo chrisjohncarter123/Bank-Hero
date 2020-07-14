@@ -1,5 +1,6 @@
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /transactions
   # GET /transactions.json
@@ -24,7 +25,14 @@ class TransactionsController < ApplicationController
   # POST /transactions
   # POST /transactions.json
   def create
-    @transaction = Transaction.new(transaction_params)
+
+    @transaction = Transaction.new()
+    puts "Hi"
+    puts transaction_params
+    puts "Hi2"
+    @transaction.account_from_id = Account.find_by(name: params[:account_from]).id
+    @transaction.account_to_id = Account.find(name: params[:account_to]).id
+    @transaction.cash = params[:cash]
 
     respond_to do |format|
       if @transaction.save
@@ -69,6 +77,6 @@ class TransactionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def transaction_params
-      params.require(:transaction).permit(:created_at, :account_from_id, :account_to_id, :cash)
+      params.permit(:created_at, :account_from, :account_to, :cash)
     end
 end

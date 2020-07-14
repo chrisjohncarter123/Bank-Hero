@@ -87,7 +87,7 @@ const transactionTemplate = (state) => ({
 
     return (dispatch) => {
       dispatch({ type: 'CREATE_TRANSACTION'})
-      fetch('http://localhost:4000/accounts', header).then(response => {
+      fetch('http://localhost:4000/transactions/', header).then(response => {
         return response.json()
       }).then(responseJSON => {
         console.log(responseJSON)
