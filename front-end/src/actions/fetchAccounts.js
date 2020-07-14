@@ -17,19 +17,6 @@ export const fetchAccounts = () => {
 
 });
 
-  export const createCounter = (name) => {
-     // Simple POST request with a JSON body using fetch
-     const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({counter:{ name: name }})
-    };
-    fetch('http://localhost:4000/counters', requestOptions)
-        .then(response => response.json())
-        .then(data => console.log(data));
-  }
-
-
 
   export const fetchAccounts = () => {
 
@@ -45,15 +32,29 @@ export const fetchAccounts = () => {
     }
   }
 
+
+  export const createCounter = () => {
+    let name = "New Name Here"
+    // Simple POST request with a JSON body using fetch
+    const requestOptions = {
+     method: 'POST',
+     headers: { 'Content-Type': 'application/json' },
+     body: JSON.stringify({counter:{ name: name }})
+   };
+   fetch('http://localhost:4000/counters', requestOptions)
+       .then(response => response.json())
+       .then(data => console.log(data));
+ }
+
+
   export const createAccount = () => {
     console.log("HI")
     let state = {name:"chris"}
 
     let header = {
-      method: "Post",
+      method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(accountTemplate(state)),
     };
@@ -64,7 +65,7 @@ export const fetchAccounts = () => {
         return response.json()
       }).then(responseJSON => {
         console.log(responseJSON)
-        dispatch({ type: 'ADD_ACCOUNTS', accounts: responseJSON })
+       // dispatch({ type: 'ADD_ACCOUNTS', accounts: responseJSON })
       })
     }
   }

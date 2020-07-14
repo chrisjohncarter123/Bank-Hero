@@ -14,7 +14,6 @@ class Home extends Component{
     console.log("handleOnClicks")
     
     this.props.fetchAccounts()
-    this.props.fetchCats()
     
     console.log(this.props)
     
@@ -27,12 +26,13 @@ class Home extends Component{
   }
 
   handleCreateCounter = () => {
-    this.props.createCounter("New Counter")
+    this.props.createCounter()
 
   }
 
   handleCreateAccount = () => {
-    this.props.createAccount()
+    this.props.createAccount("new name")
+    this.props.fetchAccounts()
 
   }
 
@@ -66,7 +66,7 @@ class Home extends Component{
 
             {accounts}
 
-            <CreateAccountForm />
+        
             
           </div>
     );
@@ -87,7 +87,7 @@ const mapDispatchToProps = dispatch => {
     fetchCats: () => dispatch(fetchCats()),
     fetchAccounts: () => dispatch(fetchAccounts()),
     createAccount: (state) => dispatch(createAccount(state)),
-    createCounter: (name) => dispatch(createCounter(name))
+    createCounter: () => dispatch(createCounter()),
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
