@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .header {
   background-color: #61dafb;
   height: 100px;
@@ -37,7 +26,6 @@
 
 ul#menu li {
   display: inline;
-  font-size:15px;
   color:green;
   margin: 10px;
 }
@@ -48,11 +36,6 @@ ul#menu {
 
 }
 
-#logo{
-  
-  
-}
-
 #block{
   display: inline-block;
 
@@ -61,34 +44,8 @@ ul#menu {
 .link {
   color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
 .account{
   background-color: blue;
   margin: 2px;
   padding: 2px;
-}
-
-.account h3{
-  color: white;
-  display: inline-block;
-  margin: 0px;
-  
-}
-
-
-.account span.cash{
-  color: white;
-  float:right;
-  text-align: right;
-
 }
