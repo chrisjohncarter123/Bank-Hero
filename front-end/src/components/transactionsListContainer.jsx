@@ -1,8 +1,8 @@
 import React from 'react';
 import AccountsList from './accountsList';
 import { connect } from 'react-redux';
-import { fetchAccounts, createAccount, createCounter, createTransaction } from '../actions/fetchAccounts'
-
+import { fetchTransactions, createTransaction } from '../actions/fetchAccounts'
+import TransactionsList from './transactionsList'
  
 class TransactionsListContainer extends React.Component {
   constructor() {
@@ -36,7 +36,7 @@ const mapStateToProps = state => {
   const mapDispatchToProps = dispatch => {
     return {
       fetchTransactions: () => dispatch(fetchTransactions()),
-      createAccount: (state) => dispatch(createAccount(state))
+      createTransaction: (state) => dispatch(createTransaction(state))
     }
   }
   export default connect(mapStateToProps, mapDispatchToProps)(TransactionsListContainer)
