@@ -83,50 +83,7 @@ class TransactionsList extends Component{
     return (
       
           <div className="Home">
-            <ContentHeader title="Transactions"/>
-
-          <div  style={divStyle}>
-            <h3>Create New Transaction:</h3>
-            <form onSubmit={event => this.handleCreateTransactionSubmit(event)}>
-              <p>
-                <label>Account From:</label>
-                <input
-                  type="text"
-                  onChange={event => this.handleAccountFromChange(event)}
-                />
-              </p>
-
-              <p>
-                <label>Account To:</label>
-                <input
-                  type="text"
-                  onChange={event => this.handleAccountToChange(event)}
-                />
-              </p>
-
-              <p>
-                <label>Cash Ammount:</label>
-                <input
-                  type="text"
-                  onChange={event => this.handleCashChange(event)}
-                />
-              </p>
-              <input type="submit" />
-            </form>
-          </div>
-
-          <br />
-
-            
-          <div  style={divStyle}>
-            <h3>All Transactions:</h3>
-
-
             {transactions}
-            </div>
-
-        
-            
           </div>
     );
   }

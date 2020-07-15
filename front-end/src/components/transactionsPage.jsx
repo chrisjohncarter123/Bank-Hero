@@ -130,7 +130,7 @@ class TransactionsPage extends Component{
             <h3>All Transactions:</h3>
 
 
-            {transactions}
+                <TransactionsListContainer />
             </div>
 
         
