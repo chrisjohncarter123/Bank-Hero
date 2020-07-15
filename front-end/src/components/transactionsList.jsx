@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import Account from './account'
 import StoreContext from '../contexts/storeContext';
 import { connect } from 'react-redux';
-import { fetchAccounts, createAccount, createCounter, createTransaction } from '../actions/fetchAccounts'
+import { fetchAccounts, createAccount, createCounter, createTransaction, fetchTransactions } from '../actions/fetchAccounts'
 import { fetchCats } from '../actions/fetchCats'
 import  CreateAccountForm  from './createAccountForm'
 import ContentHeader from './contentHeader';
+import Transaction from './transaction';
 
 class TransactionsList extends Component{
 
@@ -30,11 +31,9 @@ class TransactionsList extends Component{
 
   componentDidMount() {
     this.props.fetchTransactions()
-
    
   }
 
- 
 
   handleAccountFromChange = event => {
     this.setState({
@@ -67,14 +66,14 @@ class TransactionsList extends Component{
 
   render() {
     console.log("Props " ) // log will fire every time App renders
-    console.log(this.props.transactions.transactions)
+    console.log(this.props)
 
     let transactions = ""
 
-    if(this.props.accounts != undefined){
+    if(this.props.transactions != undefined){
         transactions = this.props.transactions.transactions
      // console.log(accounts[1])
-     transactions = this.props.transactions.transactions.map(account => <div key={account.id}><Account name={account.name} cash={account.cash}/><br /></div>);
+     transactions = this.props.transactions.transactions.map(transaction => <div key={transaction.id}><Transaction account_from={transaction.account_from} account_to={transaction.account_to} cash={transaction.cash}/><br /></div>);
     }
     else{
         transactions = <div>Loading ...</div>
@@ -150,7 +149,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchCats: () => dispatch(fetchCats()),
-    fetchAccounts: () => dispatch(fetchAccounts()),
+    fetchTransactions: () => dispatch(fetchTransactions()),
     createAccount: (state) => dispatch(createAccount(state)),
     createCounter: () => dispatch(createCounter()),
     createTransaction: (state) => dispatch(createTransaction(state)),
