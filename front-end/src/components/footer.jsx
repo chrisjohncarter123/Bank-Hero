@@ -5,7 +5,7 @@ class Footer extends Component{
     return (
       <div class="footer">
         <p>thank you for using Bank-Hero!</p>
-        <p className="mt-5 mb-3 text-muted">&copy; </p>
+        <p className="mt-5 mb-3 text-muted">&copy; {this.props.year} </p>
       </div>
     );
   }

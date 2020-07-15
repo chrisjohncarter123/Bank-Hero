@@ -77,7 +77,7 @@ class App extends Component {
                         </div>
                     </Router>
 
-                    <Footer />
+                    <Footer year='2020'/>
             </div>
 
 
