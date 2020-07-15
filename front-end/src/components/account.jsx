@@ -14,8 +14,7 @@ class Account extends Component {
       };
     }
     return (  
-      <StoreContext.Consumer>
-        {storeContext => 
+      <div>
           <div className="account">
             
             <h3> </h3>
@@ -23,9 +22,8 @@ class Account extends Component {
             <p><b>Created At: </b>{this.props.created_at}</p>
             <p><b>Cash: </b><span style={cashStyle}>{this.props.cash}</span></p>
 
-          </div>
-        }
-        </StoreContext.Consumer>
+          </div>  
+        </div>
     );
   }
 }
