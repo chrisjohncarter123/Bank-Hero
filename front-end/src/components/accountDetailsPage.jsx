@@ -18,7 +18,7 @@ class AccountDetailsPage extends Component{
 
     return (
       <div>
-        <h2>Account Details</h2>
+         <ContentHeader title="Account Details"/>
         <AccountDetailsListContainer />
       </div>
          

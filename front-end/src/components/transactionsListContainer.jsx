@@ -21,6 +21,7 @@ class TransactionsListContainer extends React.Component {
 
     
   }
+   
  
   render() {
     return (

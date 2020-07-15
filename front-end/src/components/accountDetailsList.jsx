@@ -35,8 +35,7 @@ class AccountsDetailsList extends Component{
 
 const mapStateToProps = state => {
   return {
-    accounts: state.accounts,
-    loading: state.loading_accounts
+
   }
 }
  
