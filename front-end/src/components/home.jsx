@@ -11,6 +11,12 @@ class Home extends Component{
 
   static contextType = StoreContext;
 
+  state = {
+    new_account_name : ''
+  };
+ 
+
+  /*
   handleOnClick = () => {
     console.log("handleOnClicks")
     
@@ -19,16 +25,11 @@ class Home extends Component{
     console.log(this.props)
     
 }
+*/
 
   componentDidMount() {
     this.props.fetchAccounts()
-
    
-  }
-
-  handleCreateCounter = () => {
-    this.props.createCounter()
-
   }
 
   handleCreateAccount = () => {
@@ -38,14 +39,7 @@ class Home extends Component{
 
   }
 
-  state = {
-    new_account_name : '',
-    transaction_from : '',
-    transaction_to : '',
-    cash : ''
 
-  };
- 
   handleChange = event => {
     this.setState({
       new_account_name: event.target.value
@@ -116,7 +110,6 @@ class Home extends Component{
 
           <ContentHeader title="Accounts"/>
 
-
           <div  style={divStyle}>
             <h3>Create New Account:</h3>
             <form onSubmit={event => this.handleCreateAccountSubmit(event)}>
@@ -133,17 +126,11 @@ class Home extends Component{
           </div>
 
           <br />
-
             
           <div  style={divStyle}>
             <h3>Bank Accounts:</h3>
-
-
-            {accounts}
+              {accounts}
             </div>
-
-        
-            
           </div>
     );
   }
@@ -152,7 +139,6 @@ class Home extends Component{
 
 const mapStateToProps = state => {
   return {
-    catPics: state.cats,
     accounts: state.accounts,
     loading: state.loading
   }
