@@ -20,20 +20,10 @@ class TransactionsList extends Component{
 
   };
 
-  handleOnClick = () => {
-    console.log("handleOnClicks")
-    
-    this.props.fetchTransactions()
-    
-    console.log(this.props)
-    
-}
-
   componentDidMount() {
     this.props.fetchTransactions()
    
   }
-
 
   handleAccountFromChange = event => {
     this.setState({
@@ -56,11 +46,9 @@ class TransactionsList extends Component{
 
   handleCreateTransactionSubmit = event => {
     event.preventDefault();
-    //this.props.dispatch({ type: 'ADD_TODO', payload: this.state });
-    console.log(this.state)
     this.props.createTransaction(
       {account_from: this.state.transaction_from, account_to: this.state.transaction_to, cash:this.state.cash})
-    this.props.fetchAccounts()
+    this.props.fetchTransactions()
 
   };
 
