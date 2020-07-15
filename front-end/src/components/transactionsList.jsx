@@ -6,7 +6,7 @@ import { fetchAccounts, createAccount, createCounter, createTransaction } from '
 import { fetchCats } from '../actions/fetchCats'
 import  CreateAccountForm  from './createAccountForm'
 
-class Home extends Component{
+class TransactionsList extends Component{
 
   static contextType = StoreContext;
 
@@ -197,4 +197,4 @@ const mapDispatchToProps = dispatch => {
     createTransaction: (state) => dispatch(createTransaction(state)),
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(TransactionsList)
