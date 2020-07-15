@@ -21,42 +21,7 @@ class TransactionsList extends Component{
   };
   */
 
-  componentDidMount() {
-    this.props.fetchTransactions()
-   
-  }
-
-  handleAccountFromChange = event => {
-    this.setState({
-      transaction_from: event.target.value
-    });
-  };
-
-  handleAccountToChange = event => {
-    this.setState({
-      transaction_to: event.target.value
-    });
-  };
-
-  handleCashChange = event => {
-    this.setState({
-      cash: event.target.value
-    });
-  };
- 
-
-  handleCreateTransactionSubmit = event => {
-    event.preventDefault();
-    this.props.createTransaction(
-      {account_from: this.state.transaction_from, account_to: this.state.transaction_to, cash:this.state.cash})
-    this.props.fetchTransactions()
-
-  };
-
-  render() {
-    console.log("Props " ) 
-    console.log(this.props)
-
+  renderTransactions = () => {
     let transactions = ""
 
     if(this.props.transactions != undefined){
@@ -74,16 +39,16 @@ class TransactionsList extends Component{
         transactions = <div>Loading ...</div>
     }
 
-    let divStyle = {
-      color: 'black',
-      border: 'solid 2px black',
-      padding: '15px'
-    };
+    return transactions;
+
+  }
+
+  render() {
 
     return (
-      
+
           <div className="Home">
-            {transactions}
+            {this.renderTransactions()}
           </div>
     );
   }
