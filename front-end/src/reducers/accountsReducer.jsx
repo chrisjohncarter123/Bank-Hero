@@ -1,5 +1,7 @@
 const accountsReducer = (state = { accounts: [], loading: false }, action) => {
     switch(action.type) {
+
+      //ACCOUNTS:
       case 'LOADING_ACCOUNTS':
         return {
           ...state,
@@ -17,6 +19,20 @@ const accountsReducer = (state = { accounts: [], loading: false }, action) => {
           ...state,
           accounts: action.accounts,
           loading: false
+        }
+
+      //TRANSACTIONS
+      case 'LOADING_TRANSACTIONS':
+        return {
+          ...state,
+          transactions: [...state.transactions],
+          loading: true
+        }
+      case 'CREATE_TRANSACTION':
+        return {
+          ...state,
+          transactions: [...state.transactions],
+          loading: true
         }
       case 'ADD_TRANSACTIONS':
         return {
