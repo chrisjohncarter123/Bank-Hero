@@ -12,13 +12,14 @@ class TransactionsList extends Component{
 
   static contextType = StoreContext;
 
-
+    /*
   state = {
     transaction_from : '',
     transaction_to : '',
     cash : ''
 
   };
+  */
 
   componentDidMount() {
     this.props.fetchTransactions()

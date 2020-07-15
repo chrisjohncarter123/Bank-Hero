@@ -11,10 +11,12 @@ class Home extends Component{
 
   static contextType = StoreContext;
 
+  /*
   state = {
     new_account_name : '',
     cash : ''
   };
+  */
  
 
   /*
