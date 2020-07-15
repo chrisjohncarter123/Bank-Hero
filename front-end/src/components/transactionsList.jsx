@@ -53,7 +53,7 @@ class TransactionsList extends Component{
   };
 
   render() {
-    console.log("Props " ) // log will fire every time App renders
+    console.log("Props " ) 
     console.log(this.props)
 
     let transactions = ""
@@ -134,7 +134,6 @@ class TransactionsList extends Component{
 
 const mapStateToProps = state => {
   return {
-    catPics: state.cats,
     transactions: state.transactions,
     loading: state.loading
   }
@@ -142,10 +141,7 @@ const mapStateToProps = state => {
  
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCats: () => dispatch(fetchCats()),
     fetchTransactions: () => dispatch(fetchTransactions()),
-    createAccount: (state) => dispatch(createAccount(state)),
-    createCounter: () => dispatch(createCounter()),
     createTransaction: (state) => dispatch(createTransaction(state)),
   }
 }

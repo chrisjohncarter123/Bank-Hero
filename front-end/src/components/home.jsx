@@ -84,7 +84,7 @@ class Home extends Component{
   };
 
   render() {
-    console.log("Props " ) // log will fire every time App renders
+    console.log("Props " )
     console.log(this.props.accounts.accounts)
 
     let accounts = ""
