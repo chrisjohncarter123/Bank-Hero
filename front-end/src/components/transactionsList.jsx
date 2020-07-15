@@ -61,7 +61,13 @@ class TransactionsList extends Component{
     if(this.props.transactions != undefined){
         transactions = this.props.transactions.transactions
      // console.log(accounts[1])
-     transactions = this.props.transactions.transactions.map(transaction => <div key={transaction.id}><Transaction account_from={transaction.account_from} account_to={transaction.account_to} cash={transaction.cash}/><br /></div>);
+     transactions = this.props.transactions.transactions.map(transaction =>
+        <div key={transaction.id}>
+             <Transaction 
+             account_from={transaction.account_from}
+             account_to={transaction.account_to}
+             cash={transaction.cash}/>
+        <br /></div>);
     }
     else{
         transactions = <div>Loading ...</div>
@@ -129,7 +135,7 @@ class TransactionsList extends Component{
 const mapStateToProps = state => {
   return {
     catPics: state.cats,
-    accounts: state.accounts,
+    transactions: state.transactions,
     loading: state.loading
   }
 }

@@ -1,4 +1,4 @@
-const accountsReducer = (state = { accounts: [], loading: false }, action) => {
+const accountsReducer = (state = { accounts: [], transactions: [], loading: false }, action) => {
     switch(action.type) {
 
       //ACCOUNTS:

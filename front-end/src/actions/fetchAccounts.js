@@ -29,7 +29,7 @@ const transactionTemplate = (state) => ({
 
     console.log("Fetching Transactions...")
     return (dispatch) => {
-      dispatch({ type: 'LOADING_ACCOUNTS'})
+      dispatch({ type: 'LOADING_TRANSACTIONS'})
       fetch('http://localhost:4000/transactions').then(response => {
         return response.json()
       }).then(responseJSON => {
