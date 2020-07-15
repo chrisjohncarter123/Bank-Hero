@@ -13,7 +13,6 @@ const transactionTemplate = (state) => ({
 
 
   export const fetchAccounts = () => {
-
     console.log("Fetching Accounts...")
     return (dispatch) => {
       dispatch({ type: 'LOADING_ACCOUNTS'})
@@ -22,6 +21,18 @@ const transactionTemplate = (state) => ({
       }).then(responseJSON => {
         console.log(responseJSON)
         dispatch({ type: 'ADD_ACCOUNTS', accounts: responseJSON })
+      })
+    }
+  }
+
+  export const fetchCats = () => {
+    return (dispatch) => {
+      dispatch({ type: 'LOADING_CATS'})
+      fetch('https://learn-co-curriculum.github.io/cat-api/cats.json').then(response => {
+        return response.json()
+      }).then(responseJSON => {
+        console.log(responseJSON.images)
+        dispatch({ type: 'ADD_CATS', cats: responseJSON.images })
       })
     }
   }

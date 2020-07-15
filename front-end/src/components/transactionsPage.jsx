@@ -44,43 +44,11 @@ class TransactionsPage extends Component{
     
       };
  
-
-  renderTransactions = () => {
-    let transactions = ""
-
-    if(this.props.transactions != undefined){
-        transactions = this.props.transactions.transactions
-     // console.log(accounts[1])
-     transactions = this.props.transactions.transactions.map(transaction => <div key={transaction.id}><Transaction account_from={transaction.account_from} account_to={transaction.account_to} created_at={transaction.created_at} cash={transaction.cash}/><br /></div>);
-    }
-    else{
-        transactions = <div>Loading ...</div>
-    }
-
-    return transactions
-  }
  
 
   render() {
     console.log("Props " ) 
     console.log(this.props)
-
-    let transactions = ""
-
-    if(this.props.transactions != undefined){
-    transactions = this.props.transactions.transactions
-     // console.log(accounts[1])
-     transactions = this.props.transactions.transactions.map(transaction =>
-        <div key={transaction.id}>
-             <Transaction 
-             account_from={transaction.account_from}
-             account_to={transaction.account_to}
-             cash={transaction.cash}/>
-        <br /></div>);
-    }
-    else{
-        transactions = <div>Loading ...</div>
-    }
 
     let divStyle = {
       color: 'black',

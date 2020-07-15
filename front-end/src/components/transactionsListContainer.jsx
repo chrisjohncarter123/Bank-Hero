@@ -13,9 +13,11 @@ class TransactionsListContainer extends React.Component {
   componentDidMount() {
     this.props.fetchTransactions()
 
+    /*
     this.props.dispatch({
       type: 'INCREASE_COUNT',
     });
+    */
 
     
   }
@@ -30,11 +32,11 @@ class TransactionsListContainer extends React.Component {
 }
  
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
       transactions: state.transactions,
       loading: state.loading_accounts
-    }
+    };
   }
    
   const mapDispatchToProps = dispatch => {
