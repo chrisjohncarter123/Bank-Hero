@@ -53,7 +53,7 @@ class App extends Component {
                             <Link to="/home">Home</Link>
                             </li>
                             <li>
-                            <Link to="/account details">Account Details</Link>
+                            <Link to="/accountdetails">Account Details</Link>
                             </li>
                             <li>
                             <Link to="/transactions">Transactions</Link>
