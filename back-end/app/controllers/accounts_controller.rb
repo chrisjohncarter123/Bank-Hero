@@ -32,6 +32,9 @@ class AccountsController < ApplicationController
   def create
     @account = Account.new(account_params)
 
+    puts "Acount Params:"
+    puts account_params
+
     respond_to do |format|
       if @account.save
         format.html { redirect_to @account, notice: 'Account was successfully created.' }
@@ -75,6 +78,6 @@ class AccountsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def account_params
-      params.permit(:name, :user_id, :created_at)
+      params.permit(:name, :user_id, :created_at, :cash)
     end
 end

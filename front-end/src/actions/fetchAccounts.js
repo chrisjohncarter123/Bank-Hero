@@ -1,6 +1,7 @@
 
  const accountTemplate = (state) => ({
-  name: state.name
+  name: state.name,
+  cash: state.cash
 
 });
 
@@ -55,7 +56,8 @@ const transactionTemplate = (state) => ({
 
 
   export const createAccount = (state) => {
-    console.log("HI")
+    console.log("Create Account")
+    console.log(state)
 
     let header = {
       method: "POST",

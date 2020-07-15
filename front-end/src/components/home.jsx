@@ -71,17 +71,11 @@ class Home extends Component{
     event.preventDefault();
     //this.props.dispatch({ type: 'ADD_TODO', payload: this.state });
     console.log(this.state)
-    this.props.createAccount({name: this.state.new_account_name})
-    this.props.fetchAccounts()
-
-  };
-
-  handleCreateTransactionSubmit = event => {
-    event.preventDefault();
-    //this.props.dispatch({ type: 'ADD_TODO', payload: this.state });
-    console.log(this.state)
-    this.props.createTransaction(
-      {account_from: this.state.transaction_from, account_to: this.state.transaction_to, cash:this.state.cash})
+    this.props.createAccount(
+      {
+        name: this.state.new_account_name,
+        cash: this.state.cash
+      })
     this.props.fetchAccounts()
 
   };
@@ -110,6 +104,7 @@ class Home extends Component{
     return (
       
           <div className="Home">
+
 
           <ContentHeader title="Accounts"/>
 
