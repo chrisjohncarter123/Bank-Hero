@@ -17,6 +17,7 @@ import StoreContext from '../contexts/storeContext';
 import Astronauts from './astronauts';
 import Cats from './cats'
 import TransactionsList from './transactionsList'
+import Logo from './logo'
 
 
 class App extends Component {
@@ -39,6 +40,7 @@ class App extends Component {
         return ( 
             
             <div>
+                    <Logo />
                     <h1>Bank Hero</h1>
 
                     <Router>

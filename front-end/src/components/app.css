@@ -49,3 +49,8 @@ ul#menu {
   padding: 15px;
   border: 1px solid black
 }
+
+div#logo {
+  -ms-transform: rotate(-20deg); /* IE 9 */
+  transform: rotate(-20deg); /* Standard syntax */
+}
