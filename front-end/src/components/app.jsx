@@ -16,7 +16,7 @@ import store from '../store';
 import StoreContext from '../contexts/storeContext';
 import Astronauts from './astronauts';
 import Cats from './cats'
-import TransactionsList from './transactionsList'
+import TransactionsPage from './transactionsPage'
 import Logo from './logo'
 import Logo2 from './logo2'
 
@@ -72,7 +72,7 @@ class App extends Component {
                             <Route exact path="/" component={Home} />
                             <Route exact path="/astronauts" component={Astronauts} />
                             <Route exact path="/home" component={Home} />
-                            <Route exact path="/transactions" component={TransactionsList} />
+                            <Route exact path="/transactions" component={TransactionsPage} />
                             <Route exact path="/profile" component={Profile} />
                             <Route exact path="/addbank" component={AddBank} />
                             <Route exact path="/cats" component={Cats} />
