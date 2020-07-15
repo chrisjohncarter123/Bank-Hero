@@ -10,7 +10,6 @@ import Header from './header'
 import Footer from './footer'
 import Home from './home'
 import Profile from './profile'
-import AddBank from './addBank'
 import NewUser from './newUser'
 import store from '../store';
 import StoreContext from '../contexts/storeContext';
@@ -74,7 +73,6 @@ class App extends Component {
                             <Route exact path="/home" component={Home} />
                             <Route exact path="/transactions" component={TransactionsPage} />
                             <Route exact path="/profile" component={Profile} />
-                            <Route exact path="/addbank" component={AddBank} />
                             <Route exact path="/cats" component={Cats} />
                         </div>
                     </Router>
