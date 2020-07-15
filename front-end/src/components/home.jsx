@@ -6,6 +6,7 @@ import { fetchAccounts, createAccount, createCounter, createTransaction } from '
 import { fetchCats } from '../actions/fetchCats'
 import  CreateAccountForm  from './createAccountForm'
 import ContentHeader from './contentHeader';
+import AccountsList from './accountsList'
 
 class Home extends Component{
 
@@ -82,10 +83,7 @@ class Home extends Component{
 
   };
 
-  render() {
-    console.log("Props " )
-    console.log(this.props.accounts.accounts)
-
+  renderAccounts = () => {
     let accounts = ""
 
     if(this.props.accounts != undefined){
@@ -97,11 +95,22 @@ class Home extends Component{
       accounts = <div>Loading ...</div>
     }
 
+    return accounts
+  }
+ 
+
+  render() {
+    console.log("Props " )
+    console.log(this.props.accounts.accounts)
+
+    
+
     let divStyle = {
       color: 'black',
       border: 'solid 2px black',
       padding: '15px'
     };
+
 
     return (
       
@@ -139,6 +148,7 @@ class Home extends Component{
           <div  style={divStyle}>
             <h3>Bank Accounts:</h3>
               {accounts}
+              <AccountsList />
             </div>
           </div>
     );
