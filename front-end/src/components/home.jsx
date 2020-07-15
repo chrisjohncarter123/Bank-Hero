@@ -113,13 +113,12 @@ class Home extends Component{
     return (
       
           <div className="Home">
-            fsdfsdc
 
           <ContentHeader title="Accounts"/>
 
 
           <div  style={divStyle}>
-            <h3>Create New Account123123:</h3>
+            <h3>Create New Account:</h3>
             <form onSubmit={event => this.handleCreateAccountSubmit(event)}>
               <p>
                 <label>Account Name:</label>
@@ -127,38 +126,6 @@ class Home extends Component{
                   type="text"
                   onChange={event => this.handleChange(event)}
                   placeholder={"name"}
-                />
-              </p>
-              <input type="submit" />
-            </form>
-          </div>
-
-          <br />
-
-          <div  style={divStyle}>
-            <h3>Create New Transaction:</h3>
-            <form onSubmit={event => this.handleCreateTransactionSubmit(event)}>
-              <p>
-                <label>Account From:</label>
-                <input
-                  type="text"
-                  onChange={event => this.handleAccountFromChange(event)}
-                />
-              </p>
-
-              <p>
-                <label>Account To:</label>
-                <input
-                  type="text"
-                  onChange={event => this.handleAccountToChange(event)}
-                />
-              </p>
-
-              <p>
-                <label>Cash Ammount:</label>
-                <input
-                  type="text"
-                  onChange={event => this.handleCashChange(event)}
                 />
               </p>
               <input type="submit" />

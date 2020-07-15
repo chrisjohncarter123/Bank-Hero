@@ -113,7 +113,6 @@ class TransactionsList extends Component{
     return (
       
           <div className="Home">
-              fsdfsdfsdfsfdfsdfdsf
             <ContentHeader title="Transactions"/>
 
           <div  style={divStyle}>
