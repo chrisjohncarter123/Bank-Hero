@@ -7,34 +7,10 @@ import { fetchCats } from '../actions/fetchCats'
 import  CreateAccountForm  from './createAccountForm'
 import ContentHeader from './contentHeader';
 import AccountsListContainer from './accountsListContainer'
+import TransactionsListContainer from './transactionsListContainer';
 
-class Home extends Component{
+class TransactionsPage extends Component{
 
-  static contextType = StoreContext;
-
-  /*
-  state = {
-    new_account_name : '',
-    cash : ''
-  };
-  */
- 
-
-  /*
-  handleOnClick = () => {
-    console.log("handleOnClicks")
-    
-    this.props.fetchAccounts()
-    
-    console.log(this.props)
-    
-}
-*/
-
-  componentDidMount() {
-    
-   
-  }
 
   handleCreateAccount = () => {
     this.props.createAccount({name: "new name"})
@@ -148,7 +124,7 @@ class Home extends Component{
           <div  style={divStyle}>
             <h3>Bank Accounts:</h3>
              
-            <AccountsListContainer />
+            <TransactionsListContainer />
             </div>
           </div>
     );
@@ -158,15 +134,15 @@ class Home extends Component{
 
 const mapStateToProps = state => {
   return {
-    accounts: state.accounts,
-    loading: state.loading_accounts
+    transactions: state.transactions,
+    loading: state.loading_transactions
   }
 }
  
 const mapDispatchToProps = dispatch => {
   return {
-    fetchAccounts: () => dispatch(fetchAccounts()),
-    createAccount: (state) => dispatch(createAccount(state))
+    fetchTransactions: () => dispatch(fetchTransactions()),
+    createTransaction: (state) => dispatch(createTransaction(state))
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(TransactionsPage)
