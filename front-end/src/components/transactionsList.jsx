@@ -11,46 +11,30 @@ class TransactionsList extends Component{
 
   static contextType = StoreContext;
 
+
+  state = {
+    transaction_from : '',
+    transaction_to : '',
+    cash : ''
+
+  };
+
   handleOnClick = () => {
     console.log("handleOnClicks")
     
-    this.props.fetchAccounts()
+    this.props.fetchTransactions()
     
     console.log(this.props)
     
 }
 
   componentDidMount() {
-    this.props.fetchAccounts()
+    this.props.fetchTransactions()
 
    
   }
 
-  handleCreateCounter = () => {
-    this.props.createCounter()
-
-  }
-
-  handleCreateAccount = () => {
-    this.props.createAccount({name: "new name"})
-    this.props.fetchAccounts()
-    this.render()
-
-  }
-
-  state = {
-    new_account_name : '',
-    transaction_from : '',
-    transaction_to : '',
-    cash : ''
-
-  };
  
-  handleChange = event => {
-    this.setState({
-      new_account_name: event.target.value
-    });
-  };
 
   handleAccountFromChange = event => {
     this.setState({
@@ -70,14 +54,6 @@ class TransactionsList extends Component{
     });
   };
  
-  handleCreateAccountSubmit = event => {
-    event.preventDefault();
-    //this.props.dispatch({ type: 'ADD_TODO', payload: this.state });
-    console.log(this.state)
-    this.props.createAccount({name: this.state.new_account_name})
-    this.props.fetchAccounts()
-
-  };
 
   handleCreateTransactionSubmit = event => {
     event.preventDefault();
@@ -91,14 +67,14 @@ class TransactionsList extends Component{
 
   render() {
     console.log("Props " ) // log will fire every time App renders
-    console.log(this.props.accounts.accounts)
+    console.log(this.props.transactions.transactions)
 
     let transactions = ""
 
     if(this.props.accounts != undefined){
-        transactions = this.props.accounts.accounts
+        transactions = this.props.transactions.transactions
      // console.log(accounts[1])
-     transactions = this.props.accounts.accounts.map(account => <div key={account.id}><Account name={account.name} cash={account.cash}/><br /></div>);
+     transactions = this.props.transactions.transactions.map(account => <div key={account.id}><Account name={account.name} cash={account.cash}/><br /></div>);
     }
     else{
         transactions = <div>Loading ...</div>
