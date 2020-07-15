@@ -19,12 +19,6 @@ import App from './components/app'
 
 import { addUser } from './actions'
 
-
-//import rootReducer from './reducers/rootReducer'
- 
-
-//const persistedState = loadState();
-
 const rootReducer = combineReducers({
   counter: counterReducer,
   astronauts: astronautsReducer,
@@ -35,7 +29,6 @@ const rootReducer = combineReducers({
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
-//store.dispatch(addUser("312312321331", "Carter"))
 
 console.log(store.getState());
 

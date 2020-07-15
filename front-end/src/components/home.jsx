@@ -160,11 +160,8 @@ const mapStateToProps = state => {
  
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCats: () => dispatch(fetchCats()),
     fetchAccounts: () => dispatch(fetchAccounts()),
-    createAccount: (state) => dispatch(createAccount(state)),
-    createCounter: () => dispatch(createCounter()),
-    createTransaction: (state) => dispatch(createTransaction(state)),
+    createAccount: (state) => dispatch(createAccount(state))
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
