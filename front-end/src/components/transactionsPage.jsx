@@ -8,78 +8,79 @@ import  CreateAccountForm  from './createAccountForm'
 import ContentHeader from './contentHeader';
 import AccountsListContainer from './accountsListContainer'
 import TransactionsListContainer from './transactionsListContainer';
+import Transaction from './transaction'
 
 class TransactionsPage extends Component{
 
-
-  handleCreateAccount = () => {
-    this.props.createAccount({name: "new name"})
-    this.props.fetchAccounts()
-    this.render()
-
-  }
-
-
-  handleChange = event => {
-    this.setState({
-      new_account_name: event.target.value
-    });
-  };
-
-  handleAccountFromChange = event => {
-    this.setState({
-      transaction_from: event.target.value
-    });
-  };
-
-  handleAccountToChange = event => {
-    this.setState({
-      transaction_to: event.target.value
-    });
-  };
-
-  handleCashChange = event => {
-    this.setState({
-      cash: event.target.value
-    });
-  };
-
-  
+    componentDidMount() {
+        this.props.fetchTransactions()
+       
+      }
+    
+      handleAccountFromChange = event => {
+        this.setState({
+          transaction_from: event.target.value
+        });
+      };
+    
+      handleAccountToChange = event => {
+        this.setState({
+          transaction_to: event.target.value
+        });
+      };
+    
+      handleCashChange = event => {
+        this.setState({
+          cash: event.target.value
+        });
+      };
+     
+    
+      handleCreateTransactionSubmit = event => {
+        event.preventDefault();
+        this.props.createTransaction(
+          {account_from: this.state.transaction_from, account_to: this.state.transaction_to, cash:this.state.cash})
+        this.props.fetchTransactions()
+    
+      };
  
-  handleCreateAccountSubmit = event => {
-    event.preventDefault();
-    //this.props.dispatch({ type: 'ADD_TODO', payload: this.state });
-    console.log(this.state)
-    this.props.createAccount(
-      {
-        name: this.state.new_account_name,
-        cash: this.state.cash
-      })
-    this.props.fetchAccounts()
 
-  };
+  renderTransactions = () => {
+    let transactions = ""
 
-  renderAccounts = () => {
-    let accounts = ""
-
-    if(this.props.accounts != undefined){
-      accounts = this.props.accounts.accounts
+    if(this.props.transactions != undefined){
+        transactions = this.props.transactions.transactions
      // console.log(accounts[1])
-      accounts = this.props.accounts.accounts.map(account => <div key={account.id}><Account name={account.name} created_at={account.created_at} cash={account.cash}/><br /></div>);
+     transactions = this.props.transactions.transactions.map(transaction => <div key={transaction.id}><Transaction account_from={transaction.account_from} account_to={transaction.account_to} created_at={transaction.created_at} cash={transaction.cash}/><br /></div>);
     }
     else{
-      accounts = <div>Loading ...</div>
+        transactions = <div>Loading ...</div>
     }
 
-    return accounts
+    return transactions
   }
  
 
   render() {
-    console.log("Props " )
-    console.log(this.props.accounts.accounts)
+    console.log("Props " ) 
+    console.log(this.props)
 
-    
+    let transactions = ""
+
+    if(this.props.transactions != undefined){
+    transactions = this.props.transactions.transactions
+     // console.log(accounts[1])
+     transactions = this.props.transactions.transactions.map(transaction =>
+        <div key={transaction.id}>
+             <Transaction 
+             account_from={transaction.account_from}
+             account_to={transaction.account_to}
+             cash={transaction.cash}/>
+        <br /></div>);
+    }
+    else{
+        transactions = <div>Loading ...</div>
+    }
 
     let divStyle = {
       color: 'black',
@@ -87,32 +88,35 @@ class TransactionsPage extends Component{
       padding: '15px'
     };
 
-
     return (
       
           <div className="Home">
-
-
-          <ContentHeader title="Accounts"/>
+            <ContentHeader title="Transactions"/>
 
           <div  style={divStyle}>
-            <h3>Create New Account:</h3>
-            <form onSubmit={event => this.handleCreateAccountSubmit(event)}>
+            <h3>Create New Transaction:</h3>
+            <form onSubmit={event => this.handleCreateTransactionSubmit(event)}>
               <p>
-                <label>Account Name:</label>
+                <label>Account From:</label>
                 <input
                   type="text"
-                  onChange={event => this.handleChange(event)}
-                  placeholder={""}
+                  onChange={event => this.handleAccountFromChange(event)}
                 />
               </p>
 
               <p>
-                <label>Cash:</label>
+                <label>Account To:</label>
+                <input
+                  type="text"
+                  onChange={event => this.handleAccountToChange(event)}
+                />
+              </p>
+
+              <p>
+                <label>Cash Ammount:</label>
                 <input
                   type="text"
                   onChange={event => this.handleCashChange(event)}
-                  placeholder={""}
                 />
               </p>
               <input type="submit" />
@@ -120,12 +124,17 @@ class TransactionsPage extends Component{
           </div>
 
           <br />
+
             
           <div  style={divStyle}>
-            <h3>Bank Accounts:</h3>
-             
-            <TransactionsListContainer />
+            <h3>All Transactions:</h3>
+
+
+            {transactions}
             </div>
+
+        
+            
           </div>
     );
   }
