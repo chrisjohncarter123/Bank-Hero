@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Account from './account'
 import StoreContext from '../contexts/storeContext';
 import { connect } from 'react-redux';
-import { fetchTransactions, createTransaction } from '../actions/fetchAccounts'
+import { fetchTransactions, createTransaction, fetchAccounts } from '../actions/fetchAccounts'
 import { fetchCats } from '../actions/fetchCats'
 import  CreateAccountForm  from './createAccountForm'
 import ContentHeader from './contentHeader';
@@ -14,6 +14,7 @@ class TransactionsPage extends Component{
 
     componentDidMount() {
         this.props.fetchTransactions()
+        this.props.fetchAccounts()
        
       }
     
@@ -110,6 +111,7 @@ class TransactionsPage extends Component{
 const mapStateToProps = state => {
   return {
     transactions: state.transactions,
+    accounts: state.accounts,
     loading: state.loading_transactions
   }
 }
@@ -117,6 +119,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchTransactions: () => dispatch(fetchTransactions()),
+    fetchAccounts: () => dispatch(fetchAccounts()),
     createTransaction: (state) => dispatch(createTransaction(state))
   }
 }

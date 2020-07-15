@@ -1,9 +1,8 @@
 const accountsReducer =
- (state = { accounts: [], transactions: [], loading_accounts: false,  loading_transactions: false }, action) => {
+ (state = { accounts: [] , transactions: [], loading_accounts: false,  loading_transactions: false }, action) => {
     switch(action.type) {
 
 
-      
       //ACCOUNTS:
       case 'LOADING_ACCOUNTS':
         return {
@@ -24,8 +23,6 @@ const accountsReducer =
           loading_accounts: false
         }
 
-
-
       //TRANSACTIONS
       case 'LOADING_TRANSACTIONS':
         return {
@@ -40,17 +37,21 @@ const accountsReducer =
           loading_transactions: true
         }
       case 'ADD_TRANSACTIONS':
+        console.log("Adding Transactions")
+        console.log({...state,
+          transactions: action.transactions,
+          loading_transactions: false})
         return {
           ...state,
           transactions: action.transactions,
           loading_transactions: false
         }
 
-
       //default
       default:
         return state;
     }
+    
   }
    
   export default accountsReducer;

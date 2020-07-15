@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Account from './account'
 import StoreContext from '../contexts/storeContext';
 import { connect } from 'react-redux';
-import { fetchAccounts, createAccount, createCounter, createTransaction } from '../actions/fetchAccounts'
+import { fetchAccounts, fetchTransactions, createAccount, createCounter, createTransaction } from '../actions/fetchAccounts'
 import { fetchCats } from '../actions/fetchCats'
 import  CreateAccountForm  from './createAccountForm'
 import ContentHeader from './contentHeader';
@@ -32,6 +32,8 @@ class Home extends Component{
 */
 
   componentDidMount() {
+    this.props.fetchAccounts()
+    this.props.fetchTransactions()
     
    
   }
@@ -159,13 +161,15 @@ class Home extends Component{
 const mapStateToProps = state => {
   return {
     accounts: state.accounts,
-    loading: state.loading_accounts
+    loading: state.loading_accounts,
+    transactions: state.transactions
   }
 }
  
 const mapDispatchToProps = dispatch => {
   return {
     fetchAccounts: () => dispatch(fetchAccounts()),
+    fetchTransactions: () => dispatch(fetchTransactions()),
     createAccount: (state) => dispatch(createAccount(state))
   }
 }
