@@ -77,7 +77,7 @@ class App extends Component {
                         </div>
                     </Router>
 
-                    <Footer year='2020'/>
+                    <Footer message='Thank you for using Bank-Hero!' year='2020'/>
             </div>
 
 
