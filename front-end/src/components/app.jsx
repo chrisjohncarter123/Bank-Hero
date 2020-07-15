@@ -16,6 +16,7 @@ import store from '../store';
 import StoreContext from '../contexts/storeContext';
 import Astronauts from './astronauts';
 import Cats from './cats'
+import TransactionsList from './transactionsList'
 
 
 class App extends Component {
@@ -50,6 +51,9 @@ class App extends Component {
                             <Link to="/accounts">Accounts</Link>
                             </li>
                             <li>
+                            <Link to="/transactions">Transactions</Link>
+                            </li>
+                            <li>
                             <Link to="/profile">Profile</Link>
                             </li>
                             <li>
@@ -67,6 +71,7 @@ class App extends Component {
                             <Route exact path="/" component={Home} />
                             <Route exact path="/astronauts" component={Astronauts} />
                             <Route exact path="/dashboard" component={Home} />
+                            <Route exact path="/transactions" component={TransactionsList} />
                             <Route exact path="/profile" component={Profile} />
                             <Route exact path="/addbank" component={AddBank} />
                             <Route exact path="/cats" component={Cats} />

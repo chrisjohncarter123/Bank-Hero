@@ -112,8 +112,9 @@ class TransactionsList extends Component{
     return (
       
           <div className="Home">
-
-          <br />
+            <br />
+                <h1>Transactions</h1>
+            <br />
 
           <div  style={divStyle}>
             <h3>Create New Account:</h3>
