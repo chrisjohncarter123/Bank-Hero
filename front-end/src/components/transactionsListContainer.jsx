@@ -13,6 +13,10 @@ class TransactionsListContainer extends React.Component {
   componentDidMount() {
     this.props.fetchTransactions()
 
+    this.props.dispatch({
+      type: 'INCREASE_COUNT',
+    });
+
     
   }
  

@@ -33,10 +33,8 @@ const store = createStore(
   applyMiddleware(thunk));
 
 
-console.log(store.getState());
-
 store.subscribe(() => {
-  
+ 
   console.log("subscription")
 });
 
@@ -44,7 +42,7 @@ store.subscribe(() => {
 ReactDOM.render(
     <Provider store={store}>
       <App />
-    </Provider>, document.getElementById('container')
+    </Provider>, document.getElementById('root')
   )
   //,document.getElementById('root'));
 
