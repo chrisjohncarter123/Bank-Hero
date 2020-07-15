@@ -13,7 +13,7 @@ class TransactionsList extends Component{
   renderTransactions = () => {
     let transactions = ""
 
-    if(this.props.transactions != undefined){
+    if(this.props.transactions != null){
     transactions = this.props.transactions.transactions
      // console.log(accounts[1])
      transactions = this.props.transactions.transactions.map(transaction =>
@@ -24,9 +24,9 @@ class TransactionsList extends Component{
              cash={transaction.cash}/>
         <br /></div>);
     }
-    else{
-        transactions = <div>Loading ...</div>
-    }
+   // else{
+   //     transactions = <div>Loading ...</div>
+    //}
 
     return transactions;
 

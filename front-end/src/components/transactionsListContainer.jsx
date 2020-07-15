@@ -11,13 +11,17 @@ class TransactionsListContainer extends React.Component {
   }
  
   componentDidMount() {
-    this.props.fetchTransactions()
 
-    /*
-    this.props.dispatch({
-      type: 'INCREASE_COUNT',
-    });
-    */
+    console.log("Fetching Transactions...")
+    return (dispatch) => {
+      dispatch({ type: 'LOADING_TRANSACTIONS'})
+      fetch('http://localhost:4000/transactions').then(response => {
+        return response.json()
+      }).then(responseJSON => {
+        console.log(responseJSON)
+        this.setState({transactions: responseJSON})
+      })
+    }
 
     
   }
