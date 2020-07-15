@@ -6,7 +6,7 @@ import { fetchAccounts, createAccount, createCounter, createTransaction } from '
 import { fetchCats } from '../actions/fetchCats'
 import  CreateAccountForm  from './createAccountForm'
 import ContentHeader from './contentHeader';
-import AccountsList from './accountsList'
+import AccountsListContainer from './accountsListContainer'
 
 class Home extends Component{
 
@@ -32,7 +32,7 @@ class Home extends Component{
 */
 
   componentDidMount() {
-    this.props.fetchAccounts()
+    
    
   }
 
@@ -147,8 +147,8 @@ class Home extends Component{
             
           <div  style={divStyle}>
             <h3>Bank Accounts:</h3>
-              {accounts}
-              <AccountsList />
+             
+            <AccountsListContainer />
             </div>
           </div>
     );

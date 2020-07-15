@@ -29,7 +29,7 @@ class AccountsList extends Component{
     
     return (
         <div>
-            {accounts}
+            {this.renderAccounts()}
         </div>
 
     );
