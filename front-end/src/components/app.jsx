@@ -41,7 +41,7 @@ class App extends Component {
             
             <div>
                     <Logo />
-                    <Logo2 />
+                    <Logo2 title='The Savior Bank'/>
                     <h1>Bank Hero</h1>
 
                     <Router>
