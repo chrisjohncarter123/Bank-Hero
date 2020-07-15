@@ -52,8 +52,7 @@ const mapStateToProps = state => {
  
 const mapDispatchToProps = dispatch => {
   return {
-    fetchTransactions: () => dispatch(fetchTransactions()),
-    createTransaction: (state) => dispatch(createTransaction(state)),
+
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(TransactionsList)

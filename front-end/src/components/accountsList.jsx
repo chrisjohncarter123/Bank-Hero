@@ -46,8 +46,7 @@ const mapStateToProps = state => {
  
 const mapDispatchToProps = dispatch => {
   return {
-    fetchAccounts: () => dispatch(fetchAccounts()),
-    createAccount: (state) => dispatch(createAccount(state))
+
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(AccountsList)

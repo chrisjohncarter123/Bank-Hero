@@ -128,8 +128,6 @@ class TransactionsPage extends Component{
             
           <div  style={divStyle}>
             <h3>All Transactions:</h3>
-
-
                 <TransactionsListContainer />
             </div>
 
