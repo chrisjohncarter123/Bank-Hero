@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { fetchAccounts, createAccount, createCounter, createTransaction } from '../actions/fetchAccounts'
 import { fetchCats } from '../actions/fetchCats'
 import  CreateAccountForm  from './createAccountForm'
-import contentHeader from './contentHeader'
 import ContentHeader from './contentHeader';
 
 class TransactionsList extends Component{
@@ -94,15 +93,15 @@ class TransactionsList extends Component{
     console.log("Props " ) // log will fire every time App renders
     console.log(this.props.accounts.accounts)
 
-    let accounts = ""
+    let transactions = ""
 
     if(this.props.accounts != undefined){
-      accounts = this.props.accounts.accounts
+        transactions = this.props.accounts.accounts
      // console.log(accounts[1])
-      accounts = this.props.accounts.accounts.map(account => <div key={account.id}><Account name={account.name} cash={account.cash}/><br /></div>);
+     transactions = this.props.accounts.accounts.map(account => <div key={account.id}><Account name={account.name} cash={account.cash}/><br /></div>);
     }
     else{
-      accounts = <div>Loading ...</div>
+        transactions = <div>Loading ...</div>
     }
 
     let divStyle = {
@@ -114,24 +113,8 @@ class TransactionsList extends Component{
     return (
       
           <div className="Home">
+              fsdfsdfsdfsfdfsdfdsf
             <ContentHeader title="Transactions"/>
-
-          <div  style={divStyle}>
-            <h3>Create New Account:</h3>
-            <form onSubmit={event => this.handleCreateAccountSubmit(event)}>
-              <p>
-                <label>Account Name:</label>
-                <input
-                  type="text"
-                  onChange={event => this.handleChange(event)}
-                  placeholder={"name"}
-                />
-              </p>
-              <input type="submit" />
-            </form>
-          </div>
-
-          <br />
 
           <div  style={divStyle}>
             <h3>Create New Transaction:</h3>
@@ -167,10 +150,10 @@ class TransactionsList extends Component{
 
             
           <div  style={divStyle}>
-            <h3>Bank Accounts:</h3>
+            <h3>All Transactions:</h3>
 
 
-            {accounts}
+            {transactions}
             </div>
 
         

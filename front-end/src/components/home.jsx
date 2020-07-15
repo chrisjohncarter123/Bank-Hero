@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { fetchAccounts, createAccount, createCounter, createTransaction } from '../actions/fetchAccounts'
 import { fetchCats } from '../actions/fetchCats'
 import  CreateAccountForm  from './createAccountForm'
+import ContentHeader from './contentHeader';
 
 class Home extends Component{
 
@@ -112,11 +113,13 @@ class Home extends Component{
     return (
       
           <div className="Home">
+            fsdfsdc
 
-          <br />
+          <ContentHeader title="Accounts"/>
+
 
           <div  style={divStyle}>
-            <h3>Create New Account:</h3>
+            <h3>Create New Account123123:</h3>
             <form onSubmit={event => this.handleCreateAccountSubmit(event)}>
               <p>
                 <label>Account Name:</label>

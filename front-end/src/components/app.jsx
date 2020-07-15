@@ -45,9 +45,6 @@ class App extends Component {
                         <div className="block">
                         <ul id="menu">
                             <li>
-                            <Link to="/dashboard">Dashboard</Link>
-                            </li>
-                            <li>
                             <Link to="/accounts">Accounts</Link>
                             </li>
                             <li>
@@ -70,7 +67,7 @@ class App extends Component {
                         <div id="content">
                             <Route exact path="/" component={Home} />
                             <Route exact path="/astronauts" component={Astronauts} />
-                            <Route exact path="/dashboard" component={Home} />
+                            <Route exact path="/accounts" component={Home} />
                             <Route exact path="/transactions" component={TransactionsList} />
                             <Route exact path="/profile" component={Profile} />
                             <Route exact path="/addbank" component={AddBank} />
