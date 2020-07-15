@@ -18,6 +18,12 @@ const accountsReducer = (state = { accounts: [], loading: false }, action) => {
           accounts: action.accounts,
           loading: false
         }
+      case 'ADD_TRANSACTIONS':
+        return {
+          ...state,
+          transactions: action.transactions,
+          loading: false
+        }
       default:
         return state;
     }

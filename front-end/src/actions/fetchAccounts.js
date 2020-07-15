@@ -26,7 +26,7 @@ const transactionTemplate = (state) => ({
 
   export const fetchAccounts = () => {
 
-    console.log("HI")
+    console.log("Fetching Accounts...")
     return (dispatch) => {
       dispatch({ type: 'LOADING_ACCOUNTS'})
       fetch('http://localhost:4000/accounts').then(response => {
@@ -34,6 +34,20 @@ const transactionTemplate = (state) => ({
       }).then(responseJSON => {
         console.log(responseJSON)
         dispatch({ type: 'ADD_ACCOUNTS', accounts: responseJSON })
+      })
+    }
+  }
+
+  export const fetchTransactions = () => {
+
+    console.log("Fetching Transactions...")
+    return (dispatch) => {
+      dispatch({ type: 'LOADING_ACCOUNTS'})
+      fetch('http://localhost:4000/transactions').then(response => {
+        return response.json()
+      }).then(responseJSON => {
+        console.log(responseJSON)
+        dispatch({ type: 'ADD_TRANSACTIONS', transactions: responseJSON })
       })
     }
   }
