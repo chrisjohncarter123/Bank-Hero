@@ -19,7 +19,6 @@ class AccountsDetailsListContainer extends React.Component {
   render() {
     return (
         <div>
-            <h1>Account Details</h1>
             <AccountDetailsList accounts={this.props.accounts} />
         </div>
     )

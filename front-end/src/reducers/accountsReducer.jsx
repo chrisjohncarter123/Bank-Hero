@@ -1,5 +1,6 @@
 const accountsReducer =
- (state = { accounts: [] , transactions: [], loading_accounts: false,  loading_transactions: false }, action) => {
+ (state = { 
+    transactions: [], accounts: [],  loading_accounts: false,  loading_transactions: false }, action) => {
     switch(action.type) {
 
 
