@@ -59,7 +59,7 @@ class TransactionsList extends Component{
     let transactions = ""
 
     if(this.props.transactions != undefined){
-        transactions = this.props.transactions.transactions
+    transactions = this.props.transactions.transactions
      // console.log(accounts[1])
      transactions = this.props.transactions.transactions.map(transaction =>
         <div key={transaction.id}>
@@ -135,7 +135,7 @@ class TransactionsList extends Component{
 const mapStateToProps = state => {
   return {
     transactions: state.transactions,
-    loading: state.loading
+    loading: state.loading_transactions
   }
 }
  

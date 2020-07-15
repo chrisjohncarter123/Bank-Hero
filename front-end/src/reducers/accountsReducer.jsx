@@ -1,45 +1,53 @@
-const accountsReducer = (state = { accounts: [], transactions: [], loading: false }, action) => {
+const accountsReducer =
+ (state = { accounts: [], transactions: [], loading_accounts: false,  loading_transactions: false }, action) => {
     switch(action.type) {
 
+
+      
       //ACCOUNTS:
       case 'LOADING_ACCOUNTS':
         return {
           ...state,
           accounts: [...state.accounts],
-          loading: true
+          loading_accounts: true
         }
       case 'CREATE_ACCOUNT':
         return {
           ...state,
           accounts: [...state.accounts],
-          loading: true
+          loading_accounts: true
         }
       case 'ADD_ACCOUNTS':
         return {
           ...state,
           accounts: action.accounts,
-          loading: false
+          loading_accounts: false
         }
+
+
 
       //TRANSACTIONS
       case 'LOADING_TRANSACTIONS':
         return {
           ...state,
           transactions: [...state.transactions],
-          loading: true
+          loading_transactions: true
         }
       case 'CREATE_TRANSACTION':
         return {
           ...state,
           transactions: [...state.transactions],
-          loading: true
+          loading_transactions: true
         }
       case 'ADD_TRANSACTIONS':
         return {
           ...state,
           transactions: action.transactions,
-          loading: false
+          loading_transactions: false
         }
+
+
+      //default
       default:
         return state;
     }

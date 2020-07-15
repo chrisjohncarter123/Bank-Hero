@@ -12,7 +12,8 @@ class Home extends Component{
   static contextType = StoreContext;
 
   state = {
-    new_account_name : ''
+    new_account_name : '',
+    cash : ''
   };
  
 
@@ -63,6 +64,8 @@ class Home extends Component{
       cash: event.target.value
     });
   };
+
+  
  
   handleCreateAccountSubmit = event => {
     event.preventDefault();
@@ -92,7 +95,7 @@ class Home extends Component{
     if(this.props.accounts != undefined){
       accounts = this.props.accounts.accounts
      // console.log(accounts[1])
-      accounts = this.props.accounts.accounts.map(account => <div key={account.id}><Account name={account.name} cash={account.cash}/><br /></div>);
+      accounts = this.props.accounts.accounts.map(account => <div key={account.id}><Account name={account.name} created_at={account.created_at} cash={account.cash}/><br /></div>);
     }
     else{
       accounts = <div>Loading ...</div>
@@ -118,7 +121,16 @@ class Home extends Component{
                 <input
                   type="text"
                   onChange={event => this.handleChange(event)}
-                  placeholder={"name"}
+                  placeholder={""}
+                />
+              </p>
+
+              <p>
+                <label>Cash:</label>
+                <input
+                  type="text"
+                  onChange={event => this.handleCashChange(event)}
+                  placeholder={""}
                 />
               </p>
               <input type="submit" />
@@ -140,7 +152,7 @@ class Home extends Component{
 const mapStateToProps = state => {
   return {
     accounts: state.accounts,
-    loading: state.loading
+    loading: state.loading_accounts
   }
 }
  

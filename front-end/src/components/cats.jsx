@@ -34,7 +34,7 @@ class Cats extends Component {
     return (
       <div className="Cats">
         <h1>CatBook</h1>
-        <span onClick={this.handleOnClick}>Get Cats</span>
+        <button onClick={this.handleOnClick}>Get Cats</button>
         {cats}
        
       </div>
