@@ -18,6 +18,8 @@ import Cats from './cats'
 import TransactionsPage from './transactionsPage'
 import Logo from './logo'
 import Logo2 from './logo2'
+import accountDetailsListContainer from './accountDetailsListContainer'
+
 
 
 class App extends Component {
@@ -51,6 +53,9 @@ class App extends Component {
                             <Link to="/home">Home</Link>
                             </li>
                             <li>
+                            <Link to="/account details">Account Details</Link>
+                            </li>
+                            <li>
                             <Link to="/transactions">Transactions</Link>
                             </li>
                             <li>
@@ -70,6 +75,7 @@ class App extends Component {
                         <div id="content">
                             <Route exact path="/" component={Home} />
                             <Route exact path="/astronauts" component={Astronauts} />
+                            <Route exact path="/accountdetails" component={accountDetailsListContainer} />
                             <Route exact path="/home" component={Home} />
                             <Route exact path="/transactions" component={TransactionsPage} />
                             <Route exact path="/profile" component={Profile} />

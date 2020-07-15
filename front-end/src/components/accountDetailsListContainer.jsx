@@ -1,5 +1,5 @@
 import React from 'react';
-import AccountsList from './accountsList';
+import AccountDetailsList from './accountDetailsList';
 import { connect } from 'react-redux';
 import { fetchAccounts, createAccount, createCounter, createTransaction } from '../actions/fetchAccounts'
 
@@ -19,7 +19,8 @@ class AccountsDetailsListContainer extends React.Component {
   render() {
     return (
         <div>
-            <AccountsList accounts={this.props.accounts} />
+            <h1>Account Details</h1>
+            <AccountDetailsList accounts={this.props.accounts} />
         </div>
     )
   }
@@ -39,5 +40,5 @@ const mapStateToProps = state => {
       createAccount: (state) => dispatch(createAccount(state))
     }
   }
-  export default connect(mapStateToProps, mapDispatchToProps)(AccountsListContainer)
+  export default connect(mapStateToProps, mapDispatchToProps)(AccountsDetailsListContainer)
   
