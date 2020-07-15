@@ -10,17 +10,6 @@ import Transaction from './transaction';
 
 class TransactionsList extends Component{
 
-  static contextType = StoreContext;
-
-    /*
-  state = {
-    transaction_from : '',
-    transaction_to : '',
-    cash : ''
-
-  };
-  */
-
   renderTransactions = () => {
     let transactions = ""
 
@@ -46,8 +35,7 @@ class TransactionsList extends Component{
   render() {
 
     return (
-
-          <div className="Home">
+          <div>
             {this.renderTransactions()}
           </div>
     );
