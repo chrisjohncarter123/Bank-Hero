@@ -18,6 +18,7 @@ import Astronauts from './astronauts';
 import Cats from './cats'
 import TransactionsList from './transactionsList'
 import Logo from './logo'
+import Logo2 from './logo2'
 
 
 class App extends Component {
@@ -41,6 +42,7 @@ class App extends Component {
             
             <div>
                     <Logo />
+                    <Logo2 />
                     <h1>Bank Hero</h1>
 
                     <Router>
@@ -77,7 +79,7 @@ class App extends Component {
                         </div>
                     </Router>
 
-                    <p className="mt-5 mb-3 text-muted">&copy; 2020</p>
+                    <Footer />
             </div>
 
 

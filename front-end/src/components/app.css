@@ -54,3 +54,9 @@ div#logo {
   -ms-transform: rotate(-20deg); /* IE 9 */
   transform: rotate(-20deg); /* Standard syntax */
 }
+
+div#logo {
+  -ms-transform: rotate(20deg); /* IE 9 */
+  transform: rotate(20deg); /* Standard syntax */
+  background-color: green;
+}
