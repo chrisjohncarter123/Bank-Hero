@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { fetchAccounts, createAccount, createCounter, createTransaction } from '../actions/fetchAccounts'
 import { fetchCats } from '../actions/fetchCats'
 import  CreateAccountForm  from './createAccountForm'
+import contentHeader from './contentHeader'
+import ContentHeader from './contentHeader';
 
 class TransactionsList extends Component{
 
@@ -112,9 +114,7 @@ class TransactionsList extends Component{
     return (
       
           <div className="Home">
-            <br />
-                <h1>Transactions</h1>
-            <br />
+            <ContentHeader title="Transactions"/>
 
           <div  style={divStyle}>
             <h3>Create New Account:</h3>

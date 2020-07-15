@@ -1,10 +1,10 @@
 import React from 'react';
 
-function ContentHeader() {
+function ContentHeader(props) {
   return (
     <div className="contentHeader">
         <br />
-            <h1>{this.props.title}</h1>
+            <h2>{props.title}</h2>
         <br />
     </div>
   );
