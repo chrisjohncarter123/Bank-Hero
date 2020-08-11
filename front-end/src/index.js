@@ -26,10 +26,16 @@ const rootReducer = combineReducers({
   accounts: accountsReducer
 });
 
+//withou redux, there is passing around tons of props and needless re-rendering
+//redux is tiny library and design pattern that makes state changes predictable 
 
+
+//no need for multiple stores, domain is already split into multiple reducers
 const store = createStore(
   rootReducer,
+  //used for devtools
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  //needed to use thunk
   applyMiddleware(thunk));
 
 
@@ -40,6 +46,7 @@ store.subscribe(() => {
 
 
 ReactDOM.render(
+  //provider allows store to be accessed in any component in <App />
     <Provider store={store}>
       <App />
     </Provider>, document.getElementById('root')

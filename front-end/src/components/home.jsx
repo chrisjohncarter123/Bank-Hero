@@ -37,13 +37,18 @@ class Home extends Component{
     
    
   }
-
+/*
   handleCreateAccount = () => {
+    console.log(2)
     this.props.createAccount({name: "new name"})
+    console.log(3)
     this.props.fetchAccounts()
+    console.log(4)
     this.render()
+    console.log(5)
 
   }
+  */
 
 
   handleChange = event => {
@@ -75,33 +80,38 @@ class Home extends Component{
   handleCreateAccountSubmit = event => {
     event.preventDefault();
     //this.props.dispatch({ type: 'ADD_TODO', payload: this.state });
-    console.log(this.state)
+    //console.log(this.state)
+    console.log(6)
     this.props.createAccount(
       {
         name: this.state.new_account_name,
         cash: this.state.cash
       })
     this.props.fetchAccounts()
-
+    console.log(7)
   };
 
   renderAccounts = () => {
+    console.log(8)
     let accounts = ""
 
     if(this.props.accounts != undefined){
+      console.log(9)
       accounts = this.props.accounts.accounts
      // console.log(accounts[1])
       accounts = this.props.accounts.accounts.map(account => <div key={account.id}><Account name={account.name} created_at={account.created_at} cash={account.cash}/><br /></div>);
     }
     else{
+      console.log(10)
       accounts = <div>Loading ...</div>
     }
-
+    console.log(11)
     return accounts
   }
  
 
   render() {
+    console.log(12)
     console.log("Props " )
     console.log(this.props.accounts.accounts)
 
@@ -138,6 +148,7 @@ class Home extends Component{
                 <input
                   type="text"
                   onChange={event => this.handleCashChange(event)}
+                  value={this.props.lastName}
                   placeholder={""}
                 />
               </p>

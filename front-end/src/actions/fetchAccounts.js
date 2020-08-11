@@ -11,6 +11,31 @@ const transactionTemplate = (state) => ({
   cash: state.cash
 });
 
+//an action is a pojo with info that describes state change
+// example: {type: "LOADING_ACCOUNTS", payload: {}} (payload is optional)
+
+//thunk puts fetch() logic into action creators
+//Thunk middleware allows action creators to return functions that don't need to be pure
+//this allows async api calls
+
+/*
+
+//thunk enables proper async requests to be used with redux
+
+
+//without thunk:
+export function fetchAstronauts() {
+  const astronauts = fetch('http://api.open-notify.org/astros.json')
+                      .then(response => response.json())
+  return {
+    type: 'ADD_ASTRONAUTS',
+    astronauts
+  };
+}
+
+
+
+*/
 
   export const fetchAccounts = () => {
     console.log("Fetching Accounts...")
@@ -53,9 +78,9 @@ const transactionTemplate = (state) => ({
   }
 
   export const createAccount = (state) => {
-    console.log("Create Account...")
-    console.log(state)
-
+    //console.log("Create Account...")
+    //console.log(state)
+    console.log(13)
     let header = {
       method: "POST",
       headers: {
@@ -66,13 +91,18 @@ const transactionTemplate = (state) => ({
 
     return (dispatch) => {
       dispatch({ type: 'CREATE_ACCOUNT'})
+      console.log(14)
       fetch('http://localhost:4000/accounts', header).then(response => {
         return response.json()
       }).then(responseJSON => {
         console.log(responseJSON)
        // dispatch({ type: 'ADD_ACCOUNTS', accounts: responseJSON })
       })
+
+      
+      console.log(15)
     }
+    console.log(16)
   }
 
   export const createTransaction = (state) => {

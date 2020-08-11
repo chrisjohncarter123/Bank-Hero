@@ -4,6 +4,23 @@ import StoreContext from '../contexts/storeContext';
 
 class AccountDetails extends Component {
 
+  state = {
+    priority : 0
+  };
+
+  handlePriority = event => {
+    this.setState({
+      priority:  this.state.priority + 1
+    });
+  
+
+  }
+
+  myFunction = arg => (name:"hi")
+
+
+
+
   render() { 
     let cashStyle = {
       color: 'black'
@@ -25,6 +42,8 @@ class AccountDetails extends Component {
             <p><b>id: </b>{this.props.id}</p>
             <p><button><b>Delete</b></button></p>
             <p><button><b>Update</b></button></p>
+            <button onClick={event => this.handlePriority(event)} >Add Priority</button>
+            <p><b>Priority: </b>{this.state.priority}</p>
             
 
           </div>  

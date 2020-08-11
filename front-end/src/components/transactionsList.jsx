@@ -13,9 +13,11 @@ class TransactionsList extends Component{
   renderTransactions = () => {
     let transactions = ""
 
-    if(this.props.transactions != null){
+    if(this.props.loading_transactions == false){
+
+      
     transactions = this.props.transactions.transactions
-     // console.log(accounts[1])
+
      transactions = this.props.transactions.transactions.map(transaction =>
         <div key={transaction.id}>
              <Transaction 
@@ -24,9 +26,9 @@ class TransactionsList extends Component{
              cash={transaction.cash}/>
         <br /></div>);
     }
-   // else{
-   //     transactions = <div>Loading ...</div>
-    //}
+   else{
+       transactions = <div>Loading ...</div>
+    }
 
     return transactions;
 
@@ -46,7 +48,7 @@ class TransactionsList extends Component{
 const mapStateToProps = state => {
   return {
     transactions: state.transactions,
-    loading: state.loading_transactions
+    loading_transactions: state.loading_transactions
   }
 }
  
@@ -56,4 +58,5 @@ const mapDispatchToProps = dispatch => {
     createTransaction: (state) => dispatch(createTransaction(state)),
   }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(TransactionsList)

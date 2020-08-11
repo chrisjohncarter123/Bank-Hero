@@ -39,5 +39,6 @@ const mapStateToProps = state => {
       createAccount: (state) => dispatch(createAccount(state))
     }
   }
+  
   export default connect(mapStateToProps, mapDispatchToProps)(AccountsListContainer)
   

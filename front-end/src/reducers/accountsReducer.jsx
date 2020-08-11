@@ -1,6 +1,20 @@
+
+//It can get complicated using a single reducer for multiple types of arrays
+//example: use one reducer for transactions, another for accounts 
+
+
+//                 _
+//action            |
+//                  |->  reducer   ->   new state
+//current state    _|
+
+
+
+
 const accountsReducer =
  (state = { 
     transactions: [], accounts: [],  loading_accounts: false,  loading_transactions: false }, action) => {
+      console.log(17)
     switch(action.type) {
 
 
@@ -24,6 +38,8 @@ const accountsReducer =
           loading_accounts: false
         }
 
+
+        
       //TRANSACTIONS
       case 'LOADING_TRANSACTIONS':
         return {
@@ -47,6 +63,7 @@ const accountsReducer =
           transactions: action.transactions,
           loading_transactions: false
         }
+        
 
       //default
       default:
