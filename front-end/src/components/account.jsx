@@ -20,6 +20,7 @@ class Account extends Component {
             <h3> </h3>
             <p><b>Account Name: </b>{this.props.name}</p>
             <p><b>Cash: </b><span style={cashStyle}>{this.props.cash}</span></p>
+            <p><button>More Details</button></p>
 
           </div>  
         </div>
