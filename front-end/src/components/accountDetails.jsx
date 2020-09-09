@@ -16,8 +16,6 @@ class AccountDetails extends Component {
 
   }
 
-  myFunction = arg => (name:"hi")
-
 
 
 
