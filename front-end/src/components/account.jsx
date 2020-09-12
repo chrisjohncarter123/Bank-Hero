@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import StoreContext from '../contexts/storeContext';
+import {Link} from 'react-router-dom'
 
 
 class Account extends Component {
@@ -20,7 +21,9 @@ class Account extends Component {
             <h3> </h3>
             <p><b>Account Name: </b>{this.props.name}</p>
             <p><b>Cash: </b><span style={cashStyle}>{this.props.cash}</span></p>
-            <p><button>More Details</button></p>
+            <Link to='https://www.googel.com'>
+              <button type="button" className="btn btn-info">More Information</button>
+            </Link>
 
           </div>  
         </div>
