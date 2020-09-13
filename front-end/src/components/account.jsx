@@ -21,7 +21,7 @@ class Account extends Component {
             <h3> </h3>
             <p><b>Account Name: </b>{this.props.name}</p>
             <p><b>Cash: </b><span style={cashStyle}>{this.props.cash}</span></p>
-            <Link to='https://www.googel.com'>
+            <Link exact to=''>
               <button type="button" className="btn btn-info">More Information</button>
             </Link>
 
