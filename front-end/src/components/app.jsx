@@ -52,6 +52,9 @@ class App extends Component {
                             <Link to="/home">Home</Link>
                             </li>
                             <li>
+                            <Link to="/home">New Account</Link>
+                            </li>
+                            <li>
                             <Link to="/accountdetails">Account Details</Link>
                             </li>
                             <li>
@@ -81,6 +84,7 @@ class App extends Component {
                             */}
                             <Route exact path="/accountdetails" component={accountDetailsPage} />
                             <Route exact path="/home" component={Home} />
+                            <Route exact path="/newaccount" component={Home} />
                             <Route exact path="/transactions" component={TransactionsPage} />
                             <Route exact path="/profile" component={Profile} />
                             
