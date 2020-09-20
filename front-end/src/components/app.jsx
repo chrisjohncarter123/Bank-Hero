@@ -18,6 +18,7 @@ import Cats from './cats'
 import TransactionsPage from './transactionsPage'
 import Logo from './logo'
 import Logo2 from './logo2'
+import UserProfileBadge from './userProfileBadge'
 import accountDetailsPage from './accountDetailsPage'
 
 
@@ -75,6 +76,7 @@ class App extends Component {
                             </li>
                              */}
                         </ul>
+                        <UserProfileBadge />
                         </div>
                         <div id="content">
                             <Route exact path="/" component={Home} />
