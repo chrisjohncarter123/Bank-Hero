@@ -76,7 +76,8 @@ class App extends Component {
                             </li>
                              */}
                         </ul>
-                        <UserProfileBadge />
+                            <UserProfileBadge />
+                            <Route exact path="/profile" component={Profile} />
                         </div>
                         <div id="content">
                             <Route exact path="/" component={Home} />
@@ -88,7 +89,7 @@ class App extends Component {
                             <Route exact path="/home" component={Home} />
                             <Route exact path="/newaccount" component={Home} />
                             <Route exact path="/transactions" component={TransactionsPage} />
-                            <Route exact path="/profile" component={Profile} />
+
                             
                         </div>
                     </Router>
