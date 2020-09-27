@@ -12,25 +12,6 @@ class Home extends Component{
 
   static contextType = StoreContext;
 
-  /*
-  state = {
-    new_account_name : '',
-    cash : ''
-  };
-  */
- 
-
-  /*
-  handleOnClick = () => {
-    console.log("handleOnClicks")
-    
-    this.props.fetchAccounts()
-    
-    console.log(this.props)
-    
-}
-*/
-
   componentDidMount() {
     this.props.fetchAccounts()
     this.props.fetchTransactions()
