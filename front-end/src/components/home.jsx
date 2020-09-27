@@ -70,8 +70,6 @@ class Home extends Component{
  
   handleCreateAccountSubmit = event => {
     event.preventDefault();
-    //this.props.dispatch({ type: 'ADD_TODO', payload: this.state });
-    //console.log(this.state)
     console.log(6)
     this.props.createAccount(
       {
