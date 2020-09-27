@@ -139,6 +139,16 @@ class Home extends Component{
                   placeholder={""}
                 />
               </p>
+
+              <p>
+                <label>Bank Name:</label>
+                <input
+                  type="text"
+                  onChange={event => this.handleBankNameChange(event)}
+                  value={this.props.bankName}
+                  placeholder={""}
+                />
+              </p>
               <input type="submit" />
             </form>
           </div>
