@@ -62,7 +62,11 @@ class Home extends Component{
     });
   };
 
-  
+  handleBankNameChange = event => {
+    this.setState({
+      bankName: event.target.value
+    });
+  };
  
   handleCreateAccountSubmit = event => {
     event.preventDefault();
