@@ -37,19 +37,6 @@ class Home extends Component{
     
    
   }
-/*
-  handleCreateAccount = () => {
-    console.log(2)
-    this.props.createAccount({name: "new name"})
-    console.log(3)
-    this.props.fetchAccounts()
-    console.log(4)
-    this.render()
-    console.log(5)
-
-  }
-  */
-
 
   handleChange = event => {
     this.setState({
