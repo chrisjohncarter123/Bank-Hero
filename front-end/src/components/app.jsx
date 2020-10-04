@@ -20,6 +20,7 @@ import Logo from './logo'
 import Logo2 from './logo2'
 import UserProfileBadge from './userProfileBadge'
 import accountDetailsPage from './accountDetailsPage'
+import createAccountForm from './createAccountForm';
 
 
 
@@ -53,7 +54,7 @@ class App extends Component {
                             <Link to="/home">Home</Link>
                             </li>
                             <li>
-                            <Link to="/home">New Account</Link>
+                            <Link to="/newaccount">New Account</Link>
                             </li>
                             <li>
                             <Link to="/accountdetails">Account Details</Link>
@@ -83,7 +84,7 @@ class App extends Component {
                             <Route exact path="/" component={Home} />
                             <Route exact path="/accountdetails" component={accountDetailsPage} />
                             <Route exact path="/home" component={Home} />
-                            <Route exact path="/newaccount" component={Home} />
+                            <Route exact path="/newaccount" component={createAccountForm} />
                             <Route exact path="/transactions" component={TransactionsPage} />
 
                             
