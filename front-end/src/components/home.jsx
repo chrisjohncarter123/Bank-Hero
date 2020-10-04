@@ -50,29 +50,25 @@ class Home extends Component{
   
 
   renderAccounts = () => {
-    console.log(8)
+
     let accounts = ""
 
     if(this.props.accounts != undefined){
-      console.log(9)
+
       accounts = this.props.accounts.accounts
      // console.log(accounts[1])
       accounts = this.props.accounts.accounts.map(account => <div key={account.id}><Account name={account.name} created_at={account.created_at} cash={account.cash}/><br /></div>);
     }
     else{
-      console.log(10)
+
       accounts = <div>Loading ...</div>
     }
-    console.log(11)
+
     return accounts
   }
  
 
   render() {
-    console.log(12)
-    console.log("Props " )
-    console.log(this.props.accounts.accounts)
-
     
 
     let divStyle = {
@@ -85,10 +81,6 @@ class Home extends Component{
     return (
       
           <div className="Home">
-
-
-          
-
             
           <div  style={divStyle}>
             <h3>Bank Accounts:</h3>
