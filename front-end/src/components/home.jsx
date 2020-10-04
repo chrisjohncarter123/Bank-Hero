@@ -81,6 +81,8 @@ class Home extends Component{
     return (
       
           <div className="Home">
+
+          <ContentHeader title="Home"/> 
             
           <div  style={divStyle}>
             <h3>Bank Accounts:</h3>
