@@ -68,14 +68,6 @@ class App extends Component {
                             <li>
                             <Link to="/contact">Contact</Link>
                             </li>
-                            {/*
-                            <li>
-                            <Link to="/astronauts">Astronauts</Link>
-                            </li>
-                            <li>
-                            <Link to="/cats">Cats</Link>
-                            </li>
-                             */}
                         </ul>
                             <UserProfileBadge />
                             <Route exact path="/profile" component={Profile} />
