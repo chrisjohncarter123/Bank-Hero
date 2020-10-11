@@ -19,10 +19,11 @@ class CreateAccountForm extends Component {
   };
 
 
-  handleChange = event => {
+  handleAccountNameChange = event => {
     this.setState({
       new_account_name: event.target.value
     });
+    
   };
 
   handleAccountFromChange = event => {
@@ -62,7 +63,7 @@ class CreateAccountForm extends Component {
               <label>Account Name:</label>
               <input
                 type="text"
-                onChange={event => this.handleChange(event)}
+                onChange={event => this.handleAccountNameChange(event)}
                 placeholder={""}
               />
             </p>

@@ -16,7 +16,6 @@ class Home extends Component{
     
   }
 
-
   renderAccounts = () => {
 
     let accounts = ""
@@ -35,16 +34,11 @@ class Home extends Component{
     return accounts
   }
  
-
   render() {
     
-
     return (
       
-          <div className="Home">
-
-
-              
+          <div className="Home">   
             <AccountsListContainer />
           </div>
     );
