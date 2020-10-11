@@ -69,7 +69,7 @@ class App extends Component {
                             <Link to="/contact">Contact</Link>
                             </li>
                         </ul>
-                            <UserProfileBadge />
+                            
                             <Route exact path="/profile" component={Profile} />
                         </div>
                         <div id="content">
