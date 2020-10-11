@@ -22,7 +22,6 @@ class CreateAccountForm extends Component {
 
     return (
       <div>
-        <ContentHeader title="Create New Account"/>
 
         <div >
           <form onSubmit={event => this.handleCreateAccountSubmit(event)}>

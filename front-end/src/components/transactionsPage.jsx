@@ -60,7 +60,6 @@ class TransactionsPage extends Component{
     return (
       
           <div className="Home">
-            <ContentHeader title="Transactions"/>
 
           <div  style={divStyle}>
             <h3>Create New Transaction:</h3>

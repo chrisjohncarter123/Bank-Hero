@@ -75,7 +75,7 @@ class Home extends Component{
       
           <div className="Home">
 
-            <ContentHeader title="Home"/> 
+           
               
             <AccountsListContainer />
           </div>
