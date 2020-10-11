@@ -17,6 +17,38 @@ class CreateAccountForm extends Component {
       })
     this.props.fetchAccounts()
   };
+
+
+  handleChange = event => {
+    this.setState({
+      new_account_name: event.target.value
+    });
+  };
+
+  handleAccountFromChange = event => {
+    this.setState({
+      transaction_from: event.target.value
+    });
+  };
+
+  handleAccountToChange = event => {
+    this.setState({
+      transaction_to: event.target.value
+    });
+  };
+
+  handleCashChange = event => {
+    this.setState({
+      cash: event.target.value
+    });
+  };
+
+  handleBankNameChange = event => {
+    this.setState({
+      bankName: event.target.value
+    });
+  };
+ 
  
   render() {
 
@@ -24,6 +56,7 @@ class CreateAccountForm extends Component {
       <div>
 
         <div >
+          <h3>Add Account:</h3>
           <form onSubmit={event => this.handleCreateAccountSubmit(event)}>
             <p>
               <label>Account Name:</label>

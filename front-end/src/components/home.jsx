@@ -14,40 +14,8 @@ class Home extends Component{
     this.props.fetchAccounts()
     this.props.fetchTransactions()
     
-   
   }
 
-  handleChange = event => {
-    this.setState({
-      new_account_name: event.target.value
-    });
-  };
-
-  handleAccountFromChange = event => {
-    this.setState({
-      transaction_from: event.target.value
-    });
-  };
-
-  handleAccountToChange = event => {
-    this.setState({
-      transaction_to: event.target.value
-    });
-  };
-
-  handleCashChange = event => {
-    this.setState({
-      cash: event.target.value
-    });
-  };
-
-  handleBankNameChange = event => {
-    this.setState({
-      bankName: event.target.value
-    });
-  };
- 
-  
 
   renderAccounts = () => {
 
@@ -75,7 +43,7 @@ class Home extends Component{
       
           <div className="Home">
 
-           
+
               
             <AccountsListContainer />
           </div>
