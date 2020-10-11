@@ -71,24 +71,13 @@ class Home extends Component{
   render() {
     
 
-    let divStyle = {
-      color: 'black',
-      border: 'solid 2px black',
-      padding: '15px'
-    };
-
-
     return (
       
           <div className="Home">
 
-          <ContentHeader title="Home"/> 
-            
-          <div  style={divStyle}>
-            <h3>Bank Accounts:</h3>
-             
+            <ContentHeader title="Home"/> 
+              
             <AccountsListContainer />
-            </div>
           </div>
     );
   }
