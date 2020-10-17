@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AccountDetails from './accountDetails'
-import StoreContext from '../contexts/storeContext';
 import { connect } from 'react-redux';
 
 class AccountsDetailsList extends Component{

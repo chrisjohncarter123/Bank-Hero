@@ -14,12 +14,10 @@ class Cats extends Component {
  
   componentDidMount() {
     console.log(this.props)
-    //this.props.fetchCats()
+
   }
  
   render() {
-    console.log("Props " ) // log will fire every time App renders
-    console.log(this.props.catPics.cats[0])
 
     let cats = ""
 

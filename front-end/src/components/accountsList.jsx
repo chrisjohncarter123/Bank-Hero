@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import Account from './account'
-import StoreContext from '../contexts/storeContext';
 import { connect } from 'react-redux';
-import { fetchAccounts, createAccount, createCounter, createTransaction } from '../actions/fetchAccounts'
-import { fetchCats } from '../actions/fetchCats'
-import  CreateAccountForm  from './createAccountForm'
-import ContentHeader from './contentHeader';
 
 class AccountsList extends Component{
 

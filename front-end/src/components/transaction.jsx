@@ -1,7 +1,5 @@
 
 import React, { Component } from 'react';
-import StoreContext from '../contexts/storeContext';
-
 
 class Transaction extends Component {
 

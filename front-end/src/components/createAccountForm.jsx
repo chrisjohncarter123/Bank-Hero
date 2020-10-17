@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ContentHeader from './contentHeader';
  
 class CreateAccountForm extends Component {
   state = {

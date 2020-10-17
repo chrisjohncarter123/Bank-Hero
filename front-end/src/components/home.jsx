@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Account from './account'
 import StoreContext from '../contexts/storeContext';
 import { connect } from 'react-redux';
-import { fetchAccounts, fetchTransactions, createAccount, createCounter, createTransaction } from '../actions/fetchAccounts'
-import ContentHeader from './contentHeader';
+import { fetchAccounts, fetchTransactions, createAccount} from '../actions/fetchAccounts'
 import AccountsListContainer from './accountsListContainer'
 
 class Home extends Component{

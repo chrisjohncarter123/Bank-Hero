@@ -1,24 +1,16 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import ReactDOM from 'react-dom';
 import './app.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 
-import Header from './header'
 import Footer from './footer'
 import Home from './home'
 import Profile from './profile'
-import NewUser from './newUser'
-import store from '../store';
-import StoreContext from '../contexts/storeContext';
-import Astronauts from './astronauts';
-import Cats from './cats'
 import TransactionsPage from './transactionsPage'
 import Logo from './logo'
 import Logo2 from './logo2'
-import UserProfileBadge from './userProfileBadge'
 import accountDetailsPage from './accountDetailsPage'
 import createAccountForm from './createAccountForm';
 

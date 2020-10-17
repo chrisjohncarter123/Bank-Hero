@@ -1,5 +1,4 @@
 import React from 'react';
-import AccountsList from './accountsList';
 import { connect } from 'react-redux';
 import { fetchTransactions, createTransaction } from '../actions/fetchAccounts'
 import TransactionsList from './transactionsList'

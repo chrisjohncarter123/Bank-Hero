@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import StoreContext from '../contexts/storeContext';
 import {Link} from 'react-router-dom'
 
 

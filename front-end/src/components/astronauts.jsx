@@ -13,22 +13,11 @@ class Astronauts extends Component {
     
   }
   componentDidMount() {
-      console.log("hi")
-     // this.props.fetchAstronauts()
-
+      console.log("hi");
   }
  
   render() {
       
-  //  this.props.fetchAstronauts()
-     // console.log(this.props.astronauts.people[0])
-      
-   //  const astronauts = this.props.astronauts.people.map(astro => <li key={astro.id}>{astro.name}</li>);
-   //const astronauts = this.props.astronauts.people.map(astro => <li key={astro.id}>{astro.name}</li>);
-    
- //<button onClick={(window.event) = this.handleOnClick(window.event)}> Get Astros Here </button>
-
-
     return(
       <div>
           

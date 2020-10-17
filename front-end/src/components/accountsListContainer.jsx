@@ -1,7 +1,7 @@
 import React from 'react';
 import AccountsList from './accountsList';
 import { connect } from 'react-redux';
-import { fetchAccounts, createAccount, createCounter, createTransaction } from '../actions/fetchAccounts'
+import { fetchAccounts, createAccount } from '../actions/fetchAccounts'
 
  
 class AccountsListContainer extends React.Component {
