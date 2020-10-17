@@ -13,6 +13,7 @@ import Logo from './logo'
 import Logo2 from './logo2'
 import accountDetailsPage from './accountDetailsPage'
 import createAccountForm from './createAccountForm';
+import accountDetailsListContainer from './accountDetailsListContainer';
 
 
 
@@ -66,7 +67,7 @@ class App extends Component {
                         </div>
                         <div id="content">
                             <Route exact path="/" component={Home} />
-                            <Route exact path="/accountdetails" component={accountDetailsPage} />
+                            <Route exact path="/accountdetails" component={accountDetailsListContainer} />
                             <Route exact path="/home" component={Home} />
                             <Route exact path="/newaccount" component={createAccountForm} />
                             <Route exact path="/transactions" component={TransactionsPage} />
