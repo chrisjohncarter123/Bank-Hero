@@ -57,7 +57,7 @@ class App extends Component {
                             <Link to="/newaccount">New Account</Link>
                             </li>
                             <li>
-                            <Link to="/accountdetails">Account Details</Link>
+                            <Link to="/accountdetails">Accounts</Link>
                             </li>
                             <li>
                             <Link to="/transactions">Transactions</Link>

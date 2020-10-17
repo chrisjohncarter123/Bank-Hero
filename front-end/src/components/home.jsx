@@ -23,7 +23,6 @@ class Home extends Component{
     if(this.props.accounts != undefined){
 
       accounts = this.props.accounts.accounts
-     // console.log(accounts[1])
       accounts = this.props.accounts.accounts.map(account => <div key={account.id}><Account name={account.name} created_at={account.created_at} cash={account.cash}/><br /></div>);
     }
     else{
