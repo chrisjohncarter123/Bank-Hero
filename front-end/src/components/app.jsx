@@ -11,7 +11,6 @@ import Profile from './profile'
 import TransactionsPage from './transactionsPage'
 import Logo from './logo'
 import Logo2 from './logo2'
-import accountDetailsPage from './accountDetailsPage'
 import createAccountForm from './createAccountForm';
 import accountDetailsListContainer from './accountDetailsListContainer';
 
