@@ -38,13 +38,13 @@ export function fetchAstronauts() {
 */
 
   export const fetchAccounts = () => {
-    console.log("Fetching Accounts...")
+
     return (dispatch) => {
       dispatch({ type: 'LOADING_ACCOUNTS'})
       fetch('http://localhost:4000/accounts').then(response => {
         return response.json()
       }).then(responseJSON => {
-        console.log(responseJSON)
+
         dispatch({ type: 'ADD_ACCOUNTS', accounts: responseJSON })
       })
     }
@@ -52,13 +52,13 @@ export function fetchAstronauts() {
 
   export const fetchTransactions = () => {
 
-    console.log("Fetching Transactions...")
+
     return (dispatch) => {
       dispatch({ type: 'LOADING_TRANSACTIONS'})
       fetch('http://localhost:4000/transactions').then(response => {
         return response.json()
       }).then(responseJSON => {
-        console.log(responseJSON)
+
         dispatch({ type: 'ADD_TRANSACTIONS', transactions: responseJSON })
       })
     }
@@ -71,16 +71,15 @@ export function fetchAstronauts() {
       fetch('https://learn-co-curriculum.github.io/cat-api/cats.json').then(response => {
         return response.json()
       }).then(responseJSON => {
-        console.log(responseJSON.images)
+
         dispatch({ type: 'ADD_CATS', cats: responseJSON.images })
       })
     }
   }
 
   export const createAccount = (state) => {
-    //console.log("Create Account...")
-    //console.log(state)
-    console.log(13)
+
+
     let header = {
       method: "POST",
       headers: {
@@ -91,7 +90,7 @@ export function fetchAstronauts() {
 
     return (dispatch) => {
       dispatch({ type: 'CREATE_ACCOUNT'})
-      console.log(14)
+
       fetch('http://localhost:4000/accounts', header).then(response => {
         return response.json()
       }).then(responseJSON => {
@@ -100,14 +99,12 @@ export function fetchAstronauts() {
       })
 
       
-      console.log(15)
+
     }
-    console.log(16)
+
   }
 
   export const createTransaction = (state) => {
-    console.log("Create Transaction...")
-    console.log(transactionTemplate(state))
 
     let header = {
       method: "POST",
@@ -122,7 +119,7 @@ export function fetchAstronauts() {
       fetch('http://localhost:4000/transactions/', header).then(response => {
         return response.json()
       }).then(responseJSON => {
-        console.log(responseJSON)
+
        // dispatch({ type: 'ADD_ACCOUNTS', accounts: responseJSON })
       })
     }

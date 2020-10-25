@@ -14,7 +14,12 @@ class AccountsList extends Component{
       accounts = this.props.accounts.accounts.map
         (account => 
           <div key={account.id}>
-            <Account name={account.name} created_at={account.created_at} cash={account.cash}/>
+            <Account
+              name={account.name}
+              created_at={account.created_at}
+              cash={account.cash}
+              
+            />
             <br />
           </div>
           );

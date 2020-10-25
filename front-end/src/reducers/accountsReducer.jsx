@@ -14,7 +14,7 @@
 const accountsReducer =
  (state = { 
     transactions: [], accounts: [],  loading_accounts: false,  loading_transactions: false }, action) => {
-      console.log(17)
+
     switch(action.type) {
 
 
