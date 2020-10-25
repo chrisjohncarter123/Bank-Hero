@@ -3,7 +3,7 @@ import Account from './account'
 import StoreContext from '../contexts/storeContext';
 import { connect } from 'react-redux';
 import { fetchAccounts, fetchTransactions, createAccount} from '../actions/fetchAccounts'
-import AccountsListContainer from './accountsListContainer'
+import AccountsList from './accountsList'
 
 class Home extends Component{
 
@@ -37,7 +37,7 @@ class Home extends Component{
     return (
       
           <div className="Home">   
-            <AccountsListContainer />
+            <AccountsList />
           </div>
     );
   }
