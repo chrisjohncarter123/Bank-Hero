@@ -49,9 +49,6 @@ class App extends Component {
                             <Link to="/newaccount">New Account</Link>
                             </li>
                             <li>
-                            <Link to="/accountdetails">Accounts</Link>
-                            </li>
-                            <li>
                             <Link to="/transactions">Transactions</Link>
                             </li>
                             <li>
@@ -66,7 +63,6 @@ class App extends Component {
                         </div>
                         <div id="content">
                             <Route exact path="/" component={Home} />
-                            <Route exact path="/accountdetails" component={accountDetailsListContainer} />
                             <Route exact path="/home" component={Home} />
                             <Route exact path="/newaccount" component={createAccountForm} />
                             <Route exact path="/transactions" component={TransactionsPage} />
