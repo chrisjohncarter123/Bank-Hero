@@ -3,21 +3,11 @@ import React, { Component } from 'react';
 class AccountDetails extends Component {
 
   state = {
-    priority : 0
+
   };
 
-  handlePriority = event => {
-    this.setState({
-      priority:  this.state.priority + 1
-    });
-  
-
-  }
-
-
-
-
   render() { 
+
     let cashStyle = {
       color: 'black'
     };
@@ -26,11 +16,11 @@ class AccountDetails extends Component {
         color: 'red'
       };
     }
+    
     return (  
       <div>
           <div className="account">
             
-            <h3> </h3>
             <p><b>Account Name: </b>{this.props.name}</p>
             <p><b>Created At: </b>{this.props.created_at}</p>
             <p><b>Updated At: </b>{this.props.updated_at}</p>
@@ -38,9 +28,6 @@ class AccountDetails extends Component {
             <p><b>id: </b>{this.props.id}</p>
             <p><button><b>Delete</b></button></p>
             <p><button><b>Update</b></button></p>
-            <button onClick={event => this.handlePriority(event)} >Add Priority</button>
-            <p><b>Priority: </b>{this.state.priority}</p>
-            
 
           </div>  
         </div>
