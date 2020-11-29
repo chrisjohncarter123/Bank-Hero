@@ -20,4 +20,8 @@ end
 
   def welcome
   end
+
+  def page_requires_login
+  end
+  
 end
