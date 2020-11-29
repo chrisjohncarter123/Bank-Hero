@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'welcome', to: 'sessions#welcome'
+  get 'authorized', to: 'sessions#page_requires_login'
 
   resources :users, only: [:new, :create]
   resources :counters
@@ -13,7 +14,6 @@ Rails.application.routes.draw do
   resources :transactions
   resources :accounts
 
-  
 
 
 
