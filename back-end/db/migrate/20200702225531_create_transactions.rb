@@ -4,6 +4,7 @@ class CreateTransactions < ActiveRecord::Migration[6.0]
       t.integer :account_from_id
       t.integer :account_to_id
       t.integer :cash
+      t.datetime :transation_datetime
 
       t.timestamps
     end

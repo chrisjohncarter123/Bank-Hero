@@ -4,6 +4,7 @@ class CreateContactRequests < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.string :title
       t.string :content
+      t.datetime :request_datetime
 
       t.timestamps
     end
