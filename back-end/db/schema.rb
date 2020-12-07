@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_14_061946) do
+ActiveRecord::Schema.define(version: 2020_07_02_231253) do
 
-  create_table "accounts", force: :cascade do |t|
+  create_table "bank_account_information", force: :cascade do |t|
     t.string "name"
     t.integer "user_id"
     t.integer "account_number"
@@ -25,12 +25,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_061946) do
     t.integer "user_id"
     t.string "title"
     t.string "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "counters", force: :cascade do |t|
-    t.string "name"
+    t.datetime "request_datetime"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -39,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_061946) do
     t.integer "account_from_id"
     t.integer "account_to_id"
     t.integer "cash"
+    t.datetime "transation_datetime"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -47,6 +43,8 @@ ActiveRecord::Schema.define(version: 2020_07_14_061946) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
+    t.string "username"
+    t.string "message_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
