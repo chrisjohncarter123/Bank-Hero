@@ -7,18 +7,18 @@ class Account < ApplicationRecord
         @all_from = Transactions.all.where(account_from_id: id)
 
         @all_from.foreach do |a|
-            total -= a.cash
+            @total -= a.cash
 
         end
 
         @all_to = Transactions.all.where(account_to_id: id)
 
         @all_to.foreach do |a|
-            total += a.cash
+            @total += a.cash
 
         end
 
-        return total
+        return @total
 
 
     end
