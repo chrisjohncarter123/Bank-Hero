@@ -77,6 +77,20 @@ export function fetchAstronauts() {
     }
   }
 
+
+  export const fetchFakeData = () => {
+    return (dispatch) => {
+      dispatch({ type: 'LOADING_FAKE_DATA'})
+      fetch('https://jsonplaceholder.typicode.com/todos/1').then(response => {
+        return response.json()
+      }).then(responseJSON => {
+
+        dispatch({ type: 'ADD_FAKE_DATA', data: responseJSON })
+      })
+    }
+  }
+
+
   export const createAccount = (state) => {
 
 
