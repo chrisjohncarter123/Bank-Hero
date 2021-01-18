@@ -71,7 +71,13 @@ const accountsReducer =
           transactions: [...state.transactions],
           loading_transactions: true
         }
-      
+        case 'CREATE_BLOG_POST':
+          return {
+            ...state,
+            transactions: [...state.transactions],
+            loading_transactions: true
+          }
+        
         
 
       //default
