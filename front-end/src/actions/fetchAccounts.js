@@ -133,7 +133,7 @@ export function fetchAstronauts() {
     return (dispatch) => {
       dispatch({ type: 'CREATE_BLOG_POST'})
 
-      fetch('http://localhost:4000/blogposts', header).then(response => {
+      fetch('http://localhost:4000/accounts', header).then(response => {
         return response.json()
       }).then(responseJSON => {
         console.log(responseJSON)

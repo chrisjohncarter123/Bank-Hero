@@ -68,16 +68,25 @@ const accountsReducer =
       case 'LOADING_BLOG_POSTS':
         return {
           ...state,
-          transactions: [...state.transactions],
+          transactions: [...state.blogPosts],
           loading_transactions: true
         }
         case 'CREATE_BLOG_POST':
           return {
             ...state,
-            transactions: [...state.transactions],
+            transactions: [...state.blogPosts],
             loading_transactions: true
           }
-        
+          case 'ADD_BLOG_POST':
+            console.log("Adding Blog Posts")
+            console.log({...state,
+              blogPosts: action.blogPosts,
+              loading_blog_posts: false})
+            return {
+              ...state,
+              blogPosts: action.blogPosts,
+              loading_blog_posts: false
+            }
         
 
       //default
