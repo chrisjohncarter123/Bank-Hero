@@ -63,6 +63,15 @@ const accountsReducer =
           transactions: action.transactions,
           loading_transactions: false
         }
+
+      //BLOG POSTS
+      case 'LOADING_BLOG_POSTS':
+        return {
+          ...state,
+          transactions: [...state.transactions],
+          loading_transactions: true
+        }
+      
         
 
       //default
