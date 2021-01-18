@@ -78,6 +78,7 @@ export function fetchAstronauts() {
   }
 
 
+  /*
   export const fetchFakeData = () => {
     return (dispatch) => {
       dispatch({ type: 'LOADING_FAKE_DATA'})
@@ -89,6 +90,7 @@ export function fetchAstronauts() {
       })
     }
   }
+  */
 
 
   export const createAccount = (state) => {
@@ -112,8 +114,33 @@ export function fetchAstronauts() {
        // dispatch({ type: 'ADD_ACCOUNTS', accounts: responseJSON })
       })
 
-      
+    
+    }
 
+  }
+
+  export const createBlogPost = (state) => {
+
+
+    let header = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(blogPostTemplate(state)),
+    };
+
+    return (dispatch) => {
+      dispatch({ type: 'CREATE_BLOG_POST'})
+
+      fetch('http://localhost:4000/blogposts', header).then(response => {
+        return response.json()
+      }).then(responseJSON => {
+        console.log(responseJSON)
+       // dispatch({ type: 'ADD_ACCOUNTS', accounts: responseJSON })
+      })
+
+    
     }
 
   }
